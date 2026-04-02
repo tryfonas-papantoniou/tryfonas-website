@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import ScrollReveal from "@/components/ScrollReveal";
+import ParticleBackground from "@/components/ParticleBackground";
+import TypingAnimation from "@/components/TypingAnimation";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -9,13 +12,21 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero">
+        <ParticleBackground />
         <div className="hero-inner">
           <div className="hero-content">
             <h1>
               I&apos;m Tryfonas<span className="highlight">.</span>
               <br />
-              I build <span className="highlight">AI tools</span> that solve
-              real problems
+              I build{" "}
+              <TypingAnimation
+                phrases={["AI tools", "RAG systems", "chatbots", "smart automation"]}
+                typingSpeed={90}
+                deletingSpeed={50}
+                pauseTime={2200}
+              />
+              <br />
+              that solve real problems
             </h1>
             <p className="hero-description">
               Computer Science graduate building enterprise-grade AI solutions —
@@ -145,8 +156,8 @@ export default function Home() {
               <Image
                 src="/tryfonas.jpg"
                 alt="Tryfonas Papantoniou"
-                width={220}
-                height={280}
+                width={240}
+                height={240}
                 priority
               />
             </div>
@@ -408,8 +419,15 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <p>© 2026 Tryfonas Papantoniou. Built with Next.js & AI — deployed on Vercel.</p>
+        <p>
+          © 2026 Tryfonas Papantoniou. Built with Next.js & AI — deployed on Vercel.
+          {" · "}
+          <a href="/how-i-built-this" style={{ color: "var(--accent)", textDecoration: "none" }}>
+            How I Built This Site
+          </a>
+        </p>
       </footer>
+      <BackToTop />
     </>
   );
 }

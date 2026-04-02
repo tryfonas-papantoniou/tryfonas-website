@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,16 +34,20 @@ export default function Navigation() {
           <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact" className="nav-cta">Get in Touch</a></li>
+          <li><ThemeToggle /></li>
         </ul>
-        <button
-          className={`menu-btn ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-right-mobile">
+          <ThemeToggle />
+          <button
+            className={`menu-btn ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
 
       <div className={`mobile-nav ${menuOpen ? "open" : ""}`}>
