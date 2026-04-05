@@ -60,9 +60,9 @@ export default function Home() {
                 <span className="function">Anthropic</span>
               </div>
               <div className="code-line">
-                <span className="keyword">from</span> chromadb{" "}
+                <span className="keyword">from</span> pinecone{" "}
                 <span className="keyword">import</span>{" "}
-                <span className="function">Client</span>
+                <span className="function">Pinecone</span>
               </div>
               <div className="code-line">&nbsp;</div>
               <div className="code-line">
@@ -75,8 +75,8 @@ export default function Home() {
               </div>
               <div className="code-line">
                 &nbsp;&nbsp;&nbsp;&nbsp;docs{" "}
-                <span className="operator">=</span> self.vectordb.
-                <span className="function">search</span>(question)
+                <span className="operator">=</span> self.index.
+                <span className="function">query</span>(question)
               </div>
               <div className="code-line">
                 &nbsp;&nbsp;&nbsp;&nbsp;<span className="keyword">return</span>{" "}
@@ -153,13 +153,15 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal>
             <div className="about-photo">
-              <Image
-                src="/tryfonas.jpg"
-                alt="Tryfonas Papantoniou"
-                width={240}
-                height={240}
-                priority
-              />
+              <div className="about-photo-inner">
+                <Image
+                  src="/tryfonas.jpg"
+                  alt="Tryfonas Papantoniou"
+                  width={240}
+                  height={240}
+                  priority
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -184,9 +186,23 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="projects-grid">
+
+            {/* O2C Policy Assistant */}
             <div className="project-card glow-border fade-up">
               <div className="project-preview project-preview-1">
-                <div className="project-preview-inner">💬</div>
+                <div className="chat-preview">
+                  <div className="chat-preview-header">
+                    <span className="chat-preview-dot"></span>
+                    Policy Assistant
+                  </div>
+                  <div className="chat-msg chat-msg-user">
+                    What&apos;s the credit limit policy?
+                  </div>
+                  <div className="chat-msg chat-msg-ai">
+                    Per Credit Risk Policy §3.2, standard limits are set based on payment history and annual revenue...
+                    <div><span className="chat-source-tag">📄 Credit Risk Policy</span></div>
+                  </div>
+                </div>
                 <span className="project-status status-soon">Coming Soon</span>
               </div>
               <div className="project-info">
@@ -203,9 +219,30 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* Invoice Classifier */}
             <div className="project-card glow-border fade-up">
               <div className="project-preview project-preview-2">
-                <div className="project-preview-inner">📄</div>
+                <div className="invoice-preview">
+                  <div className="invoice-preview-header">
+                    <span className="invoice-filename">INV-2024-0891.pdf</span>
+                    <span className="invoice-badge-classified">✓ Classified</span>
+                  </div>
+                  <div className="invoice-card">
+                    <div className="invoice-row">
+                      <span className="invoice-label">Vendor</span>
+                      <span className="invoice-value">Accenture S.A.</span>
+                    </div>
+                    <div className="invoice-row">
+                      <span className="invoice-label">Type</span>
+                      <span className="invoice-value">Professional Services</span>
+                    </div>
+                    <div className="invoice-row">
+                      <span className="invoice-label">Status</span>
+                      <span className="invoice-status">✓ Auto-approved</span>
+                    </div>
+                  </div>
+                </div>
                 <span className="project-status status-soon">Coming Soon</span>
               </div>
               <div className="project-info">
@@ -221,9 +258,33 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* AR Insights Dashboard */}
             <div className="project-card glow-border fade-up">
               <div className="project-preview project-preview-3">
-                <div className="project-preview-inner">📊</div>
+                <div className="ar-preview">
+                  <div className="ar-preview-header">
+                    <span className="ar-title">AR Overview</span>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.56rem" }}>Live</span>
+                  </div>
+                  <div className="ar-metric">
+                    <span className="ar-metric-value">$2.4M</span>
+                    <span className="ar-metric-change">↑ 12%</span>
+                  </div>
+                  <div className="ar-bars">
+                    {[35, 55, 70, 50, 85, 60, 45, 75, 90].map((h, i) => (
+                      <div
+                        key={i}
+                        className={`ar-bar${i === 8 ? " ar-bar-highlight" : ""}`}
+                        style={{ height: `${h}%` }}
+                      />
+                    ))}
+                  </div>
+                  <div className="ar-ai-insight">
+                    <span className="ar-ai-icon">✦</span>
+                    3 accounts flagged at risk of late payment
+                  </div>
+                </div>
                 <span className="project-status status-soon">Coming Soon</span>
               </div>
               <div className="project-info">
@@ -240,6 +301,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
           </div>
         </ScrollReveal>
       </section>
@@ -257,7 +319,7 @@ export default function Home() {
         <ScrollReveal stagger>
           <div className="skills-grid">
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(59, 130, 246, 0.12)" }}>🧠</div>
+              <div className="skill-card-icon" style={{ background: "rgba(79, 110, 247, 0.12)" }}>🧠</div>
               <h3>Large Language Models</h3>
               <p>Building applications with LLMs — prompt engineering, system design, and API integrations.</p>
               <div className="tech-list">
@@ -271,13 +333,13 @@ export default function Home() {
               <h3>RAG & Vector Search</h3>
               <p>Building retrieval-augmented generation pipelines — embedding documents, vector storage, and context-aware retrieval.</p>
               <div className="tech-list">
-                <span className="tech-tag">ChromaDB</span>
+                <span className="tech-tag">Pinecone</span>
                 <span className="tech-tag">Embeddings</span>
                 <span className="tech-tag">Vector Search</span>
               </div>
             </div>
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(245, 158, 11, 0.12)" }}>🤖</div>
+              <div className="skill-card-icon" style={{ background: "rgba(246, 153, 43, 0.12)" }}>🤖</div>
               <h3>Agentic AI</h3>
               <p>Designing AI agents that can reason, use tools, and execute multi-step workflows autonomously.</p>
               <div className="tech-list">
@@ -330,7 +392,7 @@ export default function Home() {
             <div className="edu-column">
               <h3>Education</h3>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(59, 130, 246, 0.12)" }}>
+                <div className="edu-icon" style={{ background: "rgba(79, 110, 247, 0.12)" }}>
                   <span className="edu-icon-emoji">🎓</span>
                 </div>
                 <div className="edu-info">
@@ -371,7 +433,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(245, 158, 11, 0.12)" }}>
+                <div className="edu-icon" style={{ background: "rgba(246, 153, 43, 0.12)" }}>
                   <span className="edu-icon-emoji">🤖</span>
                 </div>
                 <div className="edu-info">
