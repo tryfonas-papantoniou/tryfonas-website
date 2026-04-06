@@ -190,10 +190,13 @@ export default function Home() {
             {/* O2C Policy Assistant */}
             <div className="project-card glow-border fade-up">
               <div className="project-info">
-                <div className="project-tags">
-                  <span className="project-tag">LLM</span>
-                  <span className="project-tag">RAG</span>
-                  <span className="project-tag">Anthropic API</span>
+                <div className="project-info-top">
+                  <div className="project-tags">
+                    <span className="project-tag">LLM</span>
+                    <span className="project-tag">RAG</span>
+                    <span className="project-tag">Anthropic API</span>
+                  </div>
+                  <span className="project-status status-soon">Coming Soon</span>
                 </div>
                 <h3>O2C Policy Assistant</h3>
                 <p>
@@ -212,17 +215,19 @@ export default function Home() {
                     <div><span className="chat-source-tag">📄 Credit Risk Policy</span></div>
                   </div>
                 </div>
-                <span className="project-status status-soon">Coming Soon</span>
               </div>
             </div>
 
             {/* Invoice Classifier */}
             <div className="project-card glow-border fade-up">
               <div className="project-info">
-                <div className="project-tags">
-                  <span className="project-tag">Document AI</span>
-                  <span className="project-tag">Classification</span>
-                  <span className="project-tag">Automation</span>
+                <div className="project-info-top">
+                  <div className="project-tags">
+                    <span className="project-tag">Document AI</span>
+                    <span className="project-tag">Classification</span>
+                    <span className="project-tag">Automation</span>
+                  </div>
+                  <span className="project-status status-soon">Coming Soon</span>
                 </div>
                 <h3>Invoice Classifier</h3>
                 <p>
@@ -247,17 +252,19 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <span className="project-status status-soon">Coming Soon</span>
               </div>
             </div>
 
             {/* AR Insights Dashboard */}
             <div className="project-card glow-border fade-up">
               <div className="project-info">
-                <div className="project-tags">
-                  <span className="project-tag">Agentic AI</span>
-                  <span className="project-tag">Data Analysis</span>
-                  <span className="project-tag">NLP</span>
+                <div className="project-info-top">
+                  <div className="project-tags">
+                    <span className="project-tag">Agentic AI</span>
+                    <span className="project-tag">Data Analysis</span>
+                    <span className="project-tag">NLP</span>
+                  </div>
+                  <span className="project-status status-soon">Coming Soon</span>
                 </div>
                 <h3>AR Insights Dashboard</h3>
                 <p>
@@ -289,7 +296,6 @@ export default function Home() {
                     3 accounts flagged at risk of late payment
                   </div>
                 </div>
-                <span className="project-status status-soon">Coming Soon</span>
               </div>
             </div>
 
