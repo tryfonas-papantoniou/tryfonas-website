@@ -189,22 +189,6 @@ export default function Home() {
 
             {/* O2C Policy Assistant */}
             <div className="project-card glow-border fade-up">
-              <div className="project-preview project-preview-1">
-                <div className="chat-preview">
-                  <div className="chat-preview-header">
-                    <span className="chat-preview-dot"></span>
-                    Policy Assistant
-                  </div>
-                  <div className="chat-msg chat-msg-user">
-                    What&apos;s the credit limit policy?
-                  </div>
-                  <div className="chat-msg chat-msg-ai">
-                    Per Credit Risk Policy §3.2, standard limits are set based on payment history and annual revenue...
-                    <div><span className="chat-source-tag">📄 Credit Risk Policy</span></div>
-                  </div>
-                </div>
-                <span className="project-status status-soon">Coming Soon</span>
-              </div>
               <div className="project-info">
                 <div className="project-tags">
                   <span className="project-tag">LLM</span>
@@ -218,33 +202,22 @@ export default function Home() {
                   resolution — with source citations.
                 </p>
               </div>
-            </div>
-
-            {/* Invoice Classifier */}
-            <div className="project-card glow-border fade-up">
-              <div className="project-preview project-preview-2">
-                <div className="invoice-preview">
-                  <div className="invoice-preview-header">
-                    <span className="invoice-filename">INV-2024-0891.pdf</span>
-                    <span className="invoice-badge-classified">✓ Classified</span>
+              <div className="project-preview project-preview-1">
+                <div className="chat-preview">
+                  <div className="chat-msg chat-msg-user">
+                    What&apos;s the credit limit policy?
                   </div>
-                  <div className="invoice-card">
-                    <div className="invoice-row">
-                      <span className="invoice-label">Vendor</span>
-                      <span className="invoice-value">Accenture S.A.</span>
-                    </div>
-                    <div className="invoice-row">
-                      <span className="invoice-label">Type</span>
-                      <span className="invoice-value">Professional Services</span>
-                    </div>
-                    <div className="invoice-row">
-                      <span className="invoice-label">Status</span>
-                      <span className="invoice-status">✓ Auto-approved</span>
-                    </div>
+                  <div className="chat-msg chat-msg-ai">
+                    Limits are based on payment history and revenue per §3.2.
+                    <div><span className="chat-source-tag">📄 Credit Risk Policy</span></div>
                   </div>
                 </div>
                 <span className="project-status status-soon">Coming Soon</span>
               </div>
+            </div>
+
+            {/* Invoice Classifier */}
+            <div className="project-card glow-border fade-up">
               <div className="project-info">
                 <div className="project-tags">
                   <span className="project-tag">Document AI</span>
@@ -257,15 +230,46 @@ export default function Home() {
                   turning hours of manual document processing into seconds.
                 </p>
               </div>
+              <div className="project-preview project-preview-2">
+                <div className="invoice-preview">
+                  <div className="invoice-preview-header">
+                    <span className="invoice-filename">INV-2024-0891.pdf</span>
+                    <span className="invoice-badge-classified">✓ Classified</span>
+                  </div>
+                  <div className="invoice-card">
+                    <div className="invoice-row">
+                      <span className="invoice-label">Vendor</span>
+                      <span className="invoice-value">Nexoris S.A.</span>
+                    </div>
+                    <div className="invoice-row">
+                      <span className="invoice-label">Status</span>
+                      <span className="invoice-status">✓ Auto-approved</span>
+                    </div>
+                  </div>
+                </div>
+                <span className="project-status status-soon">Coming Soon</span>
+              </div>
             </div>
 
             {/* AR Insights Dashboard */}
             <div className="project-card glow-border fade-up">
+              <div className="project-info">
+                <div className="project-tags">
+                  <span className="project-tag">Agentic AI</span>
+                  <span className="project-tag">Data Analysis</span>
+                  <span className="project-tag">NLP</span>
+                </div>
+                <h3>AR Insights Dashboard</h3>
+                <p>
+                  AI-powered accounts receivable analytics — ask questions about
+                  financial data in plain English and get intelligent
+                  visualizations.
+                </p>
+              </div>
               <div className="project-preview project-preview-3">
                 <div className="ar-preview">
                   <div className="ar-preview-header">
                     <span className="ar-title">AR Overview</span>
-                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.56rem" }}>Live</span>
                   </div>
                   <div className="ar-metric">
                     <span className="ar-metric-value">$2.4M</span>
@@ -286,19 +290,6 @@ export default function Home() {
                   </div>
                 </div>
                 <span className="project-status status-soon">Coming Soon</span>
-              </div>
-              <div className="project-info">
-                <div className="project-tags">
-                  <span className="project-tag">Agentic AI</span>
-                  <span className="project-tag">Data Analysis</span>
-                  <span className="project-tag">NLP</span>
-                </div>
-                <h3>AR Insights Dashboard</h3>
-                <p>
-                  AI-powered accounts receivable analytics — ask questions about
-                  financial data in plain English and get intelligent
-                  visualizations.
-                </p>
               </div>
             </div>
 
