@@ -691,7 +691,7 @@ section {
   height: 220px;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   border-radius: 0 0 14px 14px;
