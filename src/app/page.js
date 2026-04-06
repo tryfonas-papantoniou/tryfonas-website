@@ -200,9 +200,9 @@ export default function Home() {
                 </div>
                 <h3>O2C Policy Assistant</h3>
                 <p>
-                  AI chatbot powered by RAG that can answer questions about
-                  Order-to-Cash policies — invoicing, collections, dispute
-                  resolution — with source citations.
+                  RAG-powered chatbot for Order-to-Cash policy questions —
+                  invoicing, collections, and dispute resolution — with
+                  source citations.
                 </p>
               </div>
               <div className="project-preview project-preview-1">
