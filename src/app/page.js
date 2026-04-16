@@ -1,22 +1,141 @@
 import Image from "next/image";
+import {
+  Brain,
+  Search,
+  Bot,
+  Code2,
+  Wrench,
+  Sparkles,
+  Mail,
+  GraduationCap,
+  Globe,
+  Briefcase,
+  Landmark,
+  FileText,
+} from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import Navigation from "@/components/Navigation";
 import ScrollReveal from "@/components/ScrollReveal";
 import ParticleBackground from "@/components/ParticleBackground";
 import TypingAnimation from "@/components/TypingAnimation";
 import BackToTop from "@/components/BackToTop";
+import AuroraBackground from "@/components/AuroraBackground";
+import StatsStrip from "@/components/StatsStrip";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
+import CodeTypingAnimation from "@/components/CodeTypingAnimation";
+
+// Tokens for the animated hero code panel — a compact, accurate RAG example
+// using the real Anthropic messages API and Pinecone index patterns.
+const HERO_CODE_LINES = [
+  [{ text: "# RAG Knowledge Assistant — Python SDK", type: "comment" }],
+  [
+    { text: "from", type: "keyword" },
+    { text: " anthropic " },
+    { text: "import", type: "keyword" },
+    { text: " " },
+    { text: "Anthropic", type: "function" },
+  ],
+  [
+    { text: "from", type: "keyword" },
+    { text: " pinecone " },
+    { text: "import", type: "keyword" },
+    { text: " " },
+    { text: "Pinecone", type: "function" },
+  ],
+  [],
+  [
+    { text: "class", type: "keyword" },
+    { text: " " },
+    { text: "KnowledgeAssistant", type: "function" },
+    { text: ":" },
+  ],
+  [
+    { text: "    " },
+    { text: "def", type: "keyword" },
+    { text: " " },
+    { text: "__init__", type: "function" },
+    { text: "(self):" },
+  ],
+  [
+    { text: "        self.claude " },
+    { text: "=", type: "operator" },
+    { text: " " },
+    { text: "Anthropic", type: "function" },
+    { text: "()" },
+  ],
+  [
+    { text: "        self.db " },
+    { text: "=", type: "operator" },
+    { text: " " },
+    { text: "Pinecone", type: "function" },
+    { text: "()." },
+    { text: "Index", type: "function" },
+    { text: "(" },
+    { text: '"docs"', type: "string" },
+    { text: ")" },
+  ],
+  [],
+  [
+    { text: "    " },
+    { text: "def", type: "keyword" },
+    { text: " " },
+    { text: "query", type: "function" },
+    { text: "(self, q):" },
+  ],
+  [
+    { text: "        docs " },
+    { text: "=", type: "operator" },
+    { text: " self.db." },
+    { text: "query", type: "function" },
+    { text: "(q, top_k" },
+    { text: "=", type: "operator" },
+    { text: "5)" },
+  ],
+  [
+    { text: "        " },
+    { text: "return", type: "keyword" },
+    { text: " self.claude.messages." },
+    { text: "create", type: "function" },
+    { text: "(" },
+  ],
+  [
+    { text: "            model" },
+    { text: "=", type: "operator" },
+    { text: '"claude-sonnet-4-5"', type: "string" },
+    { text: "," },
+  ],
+  [
+    { text: "            messages" },
+    { text: "=", type: "operator" },
+    { text: "[{" },
+    { text: '"role"', type: "string" },
+    { text: ": " },
+    { text: '"user"', type: "string" },
+    { text: "," },
+  ],
+  [
+    { text: "                " },
+    { text: '"content"', type: "string" },
+    { text: ": " },
+    { text: 'f"{docs}\\n{q}"', type: "string" },
+    { text: "}]," },
+  ],
+  [{ text: "        )" }],
+];
 
 export default function Home() {
   return (
     <>
+      <AuroraBackground />
+      <ParticleBackground />
       <Navigation />
 
       {/* HERO */}
       <section className="hero">
-        <ParticleBackground />
         <div className="hero-inner">
           <div className="hero-content">
             <h1>
-              I&apos;m Tryfonas<span className="highlight">.</span>
+              Hi, I&apos;m Tryfonas<span className="highlight">.</span>
               <br />
               I build{" "}
               <TypingAnimation
@@ -51,51 +170,10 @@ export default function Home() {
                 <span className="hero-card-dot"></span>
                 <span className="hero-card-title">rag_pipeline.py</span>
               </div>
-              <div className="code-line">
-                <span className="comment"># RAG-Powered Knowledge Assistant</span>
-              </div>
-              <div className="code-line">
-                <span className="keyword">from</span> anthropic{" "}
-                <span className="keyword">import</span>{" "}
-                <span className="function">Anthropic</span>
-              </div>
-              <div className="code-line">
-                <span className="keyword">from</span> pinecone{" "}
-                <span className="keyword">import</span>{" "}
-                <span className="function">Pinecone</span>
-              </div>
-              <div className="code-line">&nbsp;</div>
-              <div className="code-line">
-                <span className="keyword">class</span>{" "}
-                <span className="function">KnowledgeAssistant</span>:
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;<span className="keyword">def</span>{" "}
-                <span className="function">query</span>(self, question):
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;&nbsp;&nbsp;docs{" "}
-                <span className="operator">=</span> self.index.
-                <span className="function">query</span>(question)
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;&nbsp;&nbsp;<span className="keyword">return</span>{" "}
-                self.claude.<span className="function">generate</span>(
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt
-                <span className="operator">=</span>question,
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context
-                <span className="operator">=</span>docs
-              </div>
-              <div className="code-line">
-                &nbsp;&nbsp;&nbsp;&nbsp;)<span className="typing-cursor"></span>
-              </div>
+              <CodeTypingAnimation lines={HERO_CODE_LINES} speed={16} startDelay={450} />
             </div>
             <div className="floating-badge badge-1 glow-border">
-              <div className="badge-icon">🤖</div>
+              <div className="badge-icon"><Bot size={18} strokeWidth={2} /></div>
               <div>
                 <div style={{ fontWeight: 600 }}>RAG Pipeline</div>
                 <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>
@@ -104,7 +182,7 @@ export default function Home() {
               </div>
             </div>
             <div className="floating-badge badge-2 glow-border">
-              <div className="badge-icon">⚡</div>
+              <div className="badge-icon"><Sparkles size={18} strokeWidth={2} /></div>
               <div>
                 <div style={{ fontWeight: 600 }}>Built with AI</div>
                 <div style={{ fontSize: "0.7rem", color: "var(--text-muted)" }}>
@@ -115,6 +193,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* STATS STRIP */}
+      <StatsStrip />
 
       {/* ABOUT */}
       <section id="about">
@@ -167,25 +248,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* EXPERIENCE */}
+      <ExperienceTimeline />
+
       {/* PROJECTS */}
       <section id="projects">
         <ScrollReveal>
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">AI Tools I&apos;m Building</h2>
+          <span className="section-label">Projects &amp; Roadmap</span>
+          <h2 className="section-title">What I&apos;ve Built &amp; What&apos;s Next</h2>
           <p className="section-subtitle">
-            Each project demonstrates a different aspect of modern AI engineering
-            — from retrieval-augmented generation to document intelligence and
-            agentic workflows.
+            One live project — this site itself — and three AI tools in active
+            development, each demonstrating a different aspect of modern AI
+            engineering: retrieval-augmented generation, document intelligence,
+            and agentic workflows.
           </p>
           <div className="projects-intro">
-            These tools are inspired by real inefficiencies I encountered during
-            my 6+ years in enterprise finance operations — manual processes, slow
-            decisions, and inconsistent data handling that are exactly the kind
-            of problems AI can solve.
+            The three tools below are inspired by real inefficiencies I
+            encountered during my 6+ years in enterprise finance operations —
+            manual processes, slow decisions, and inconsistent data handling
+            that are exactly the kind of problems AI can solve.
           </div>
         </ScrollReveal>
         <ScrollReveal stagger>
           <div className="projects-grid">
+
+            {/* This Site — Live */}
+            <div className="project-card glow-border fade-up">
+              <div className="project-info">
+                <div className="project-info-top">
+                  <div className="project-tags">
+                    <span className="project-tag">Next.js 16</span>
+                    <span className="project-tag">React 19</span>
+                    <span className="project-tag">Canvas</span>
+                  </div>
+                  <span className="project-status status-live">● Live</span>
+                </div>
+                <h3>tryfonas.dev — This Site</h3>
+                <p>
+                  Portfolio built through AI-assisted development — custom
+                  canvas starfield, scroll-linked aurora, responsive layout,
+                  deployed on Vercel with GitHub CI.
+                </p>
+                <a href="/how-i-built-this" className="project-link-cta">
+                  Read the build log →
+                </a>
+              </div>
+              <div className="project-preview project-preview-site">
+                <div className="site-preview">
+                  <div className="site-preview-chrome">
+                    <span className="site-preview-dot" />
+                    <span className="site-preview-dot" />
+                    <span className="site-preview-dot" />
+                    <span className="site-preview-url">tryfonas.dev</span>
+                  </div>
+                  <div className="site-preview-body">
+                    <div className="site-preview-title">
+                      Hi, I&apos;m Tryfonas<span className="site-preview-accent">.</span>
+                    </div>
+                    <div className="site-preview-sub">
+                      I build AI tools that solve real problems
+                    </div>
+                    <div className="site-preview-buttons">
+                      <span className="site-preview-btn site-preview-btn-primary" />
+                      <span className="site-preview-btn" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* O2C Policy Assistant */}
             <div className="project-card glow-border fade-up">
@@ -196,7 +326,7 @@ export default function Home() {
                     <span className="project-tag">RAG</span>
                     <span className="project-tag">Anthropic API</span>
                   </div>
-                  <span className="project-status status-soon">Coming Soon</span>
+                  <span className="project-status status-progress">In Progress</span>
                 </div>
                 <h3>O2C Policy Assistant</h3>
                 <p>
@@ -204,6 +334,19 @@ export default function Home() {
                   invoicing, collections, and dispute resolution — with
                   source citations.
                 </p>
+                <div className="project-progress">
+                  <div className="project-progress-meta">
+                    <span className="project-progress-label">Progress</span>
+                    <span className="project-progress-value">35%</span>
+                  </div>
+                  <div className="project-progress-bar">
+                    <div className="project-progress-fill" style={{ width: "35%" }} />
+                  </div>
+                  <div className="project-progress-footer">
+                    <span className="project-target">Target: May 2026</span>
+                    <span className="project-repo">Repo: private</span>
+                  </div>
+                </div>
               </div>
               <div className="project-preview project-preview-1">
                 <div className="chat-preview">
@@ -212,7 +355,12 @@ export default function Home() {
                   </div>
                   <div className="chat-msg chat-msg-ai">
                     Limits are based on payment history and revenue per §3.2.
-                    <div><span className="chat-source-tag">📄 Credit Risk Policy</span></div>
+                    <div>
+                      <span className="chat-source-tag">
+                        <FileText size={12} strokeWidth={2.2} />
+                        Credit Risk Policy
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,13 +375,26 @@ export default function Home() {
                     <span className="project-tag">Classification</span>
                     <span className="project-tag">Automation</span>
                   </div>
-                  <span className="project-status status-soon">Coming Soon</span>
+                  <span className="project-status status-progress">In Progress</span>
                 </div>
                 <h3>Invoice Classifier</h3>
                 <p>
                   Automated invoice categorization and routing using LLMs —
                   turning hours of manual document processing into seconds.
                 </p>
+                <div className="project-progress">
+                  <div className="project-progress-meta">
+                    <span className="project-progress-label">Progress</span>
+                    <span className="project-progress-value">20%</span>
+                  </div>
+                  <div className="project-progress-bar">
+                    <div className="project-progress-fill" style={{ width: "20%" }} />
+                  </div>
+                  <div className="project-progress-footer">
+                    <span className="project-target">Target: May 2026</span>
+                    <span className="project-repo">Repo: private</span>
+                  </div>
+                </div>
               </div>
               <div className="project-preview project-preview-2">
                 <div className="invoice-preview">
@@ -264,7 +425,7 @@ export default function Home() {
                     <span className="project-tag">Data Analysis</span>
                     <span className="project-tag">NLP</span>
                   </div>
-                  <span className="project-status status-soon">Coming Soon</span>
+                  <span className="project-status status-planned">Planned</span>
                 </div>
                 <h3>AR Insights Dashboard</h3>
                 <p>
@@ -272,6 +433,19 @@ export default function Home() {
                   financial data in plain English and get intelligent
                   visualizations.
                 </p>
+                <div className="project-progress">
+                  <div className="project-progress-meta">
+                    <span className="project-progress-label">Progress</span>
+                    <span className="project-progress-value">10%</span>
+                  </div>
+                  <div className="project-progress-bar">
+                    <div className="project-progress-fill" style={{ width: "10%" }} />
+                  </div>
+                  <div className="project-progress-footer">
+                    <span className="project-target">Target: May 2026</span>
+                    <span className="project-repo">Repo: private</span>
+                  </div>
+                </div>
               </div>
               <div className="project-preview project-preview-3">
                 <div className="ar-preview">
@@ -316,7 +490,9 @@ export default function Home() {
         <ScrollReveal stagger>
           <div className="skills-grid">
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(79, 110, 247, 0.12)" }}>🧠</div>
+              <div className="skill-card-icon" style={{ background: "rgba(79, 110, 247, 0.12)", color: "#7B93FA" }}>
+                <Brain size={22} strokeWidth={1.8} />
+              </div>
               <h3>Large Language Models</h3>
               <p>Building applications with LLMs — prompt engineering, system design, and API integrations.</p>
               <div className="tech-list">
@@ -326,7 +502,9 @@ export default function Home() {
               </div>
             </div>
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(139, 92, 246, 0.12)" }}>🔍</div>
+              <div className="skill-card-icon" style={{ background: "rgba(139, 92, 246, 0.12)", color: "#a78bfa" }}>
+                <Search size={22} strokeWidth={1.8} />
+              </div>
               <h3>RAG & Vector Search</h3>
               <p>Building retrieval-augmented generation pipelines — embedding documents, vector storage, and context-aware retrieval.</p>
               <div className="tech-list">
@@ -336,7 +514,9 @@ export default function Home() {
               </div>
             </div>
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(246, 153, 43, 0.12)" }}>🤖</div>
+              <div className="skill-card-icon" style={{ background: "rgba(246, 153, 43, 0.12)", color: "#fbb454" }}>
+                <Bot size={22} strokeWidth={1.8} />
+              </div>
               <h3>Agentic AI</h3>
               <p>Designing AI agents that can reason, use tools, and execute multi-step workflows autonomously.</p>
               <div className="tech-list">
@@ -350,7 +530,9 @@ export default function Home() {
         <ScrollReveal stagger>
           <div className="skills-grid-bottom">
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(34, 197, 94, 0.12)" }}>💻</div>
+              <div className="skill-card-icon" style={{ background: "rgba(34, 197, 94, 0.12)", color: "#4ade80" }}>
+                <Code2 size={22} strokeWidth={1.8} />
+              </div>
               <h3>Web Development</h3>
               <p>Building and deploying web applications using modern frameworks and hosting platforms.</p>
               <div className="tech-list">
@@ -361,7 +543,9 @@ export default function Home() {
               </div>
             </div>
             <div className="skill-card glow-border fade-up">
-              <div className="skill-card-icon" style={{ background: "rgba(236, 72, 153, 0.12)" }}>🛠️</div>
+              <div className="skill-card-icon" style={{ background: "rgba(236, 72, 153, 0.12)", color: "#f472b6" }}>
+                <Wrench size={22} strokeWidth={1.8} />
+              </div>
               <h3>AI-Assisted Development</h3>
               <p>Using AI as a development partner — turning ideas into working software through AI collaboration.</p>
               <div className="tech-list">
@@ -389,8 +573,8 @@ export default function Home() {
             <div className="edu-column">
               <h3>Education</h3>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(79, 110, 247, 0.12)" }}>
-                  <span className="edu-icon-emoji">🎓</span>
+                <div className="edu-icon" style={{ background: "rgba(79, 110, 247, 0.12)", color: "#7B93FA" }}>
+                  <GraduationCap size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>BSc Computer Science</h4>
@@ -398,8 +582,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(139, 92, 246, 0.12)" }}>
-                  <span className="edu-icon-emoji">🌍</span>
+                <div className="edu-icon" style={{ background: "rgba(139, 92, 246, 0.12)", color: "#a78bfa" }}>
+                  <Globe size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>Erasmus+ — Business Administration</h4>
@@ -412,8 +596,8 @@ export default function Home() {
             <div className="edu-column">
               <h3>AI Trainings & Certifications</h3>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(34, 197, 94, 0.12)" }}>
-                  <span className="edu-icon-emoji">🔧</span>
+                <div className="edu-icon" style={{ background: "rgba(34, 197, 94, 0.12)", color: "#4ade80" }}>
+                  <Wrench size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>AI Technical Practitioner (AITECH)</h4>
@@ -421,8 +605,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(236, 72, 153, 0.12)" }}>
-                  <span className="edu-icon-emoji">💼</span>
+                <div className="edu-icon" style={{ background: "rgba(236, 72, 153, 0.12)", color: "#f472b6" }}>
+                  <Briefcase size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>AI Business Practitioner (AIBIZ)</h4>
@@ -430,8 +614,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(246, 153, 43, 0.12)" }}>
-                  <span className="edu-icon-emoji">🤖</span>
+                <div className="edu-icon" style={{ background: "rgba(246, 153, 43, 0.12)", color: "#fbb454" }}>
+                  <Bot size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>Reinvention with Agentic AI</h4>
@@ -439,8 +623,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
-                <div className="edu-icon" style={{ background: "rgba(220, 38, 38, 0.12)" }}>
-                  <span className="edu-icon-emoji">🏛️</span>
+                <div className="edu-icon" style={{ background: "rgba(220, 38, 38, 0.12)", color: "#f87171" }}>
+                  <Landmark size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
                   <h4>CS50 ReadyPlayer50</h4>
@@ -463,14 +647,17 @@ export default function Home() {
             Let&apos;s talk.
           </p>
           <div className="contact-links">
-            <a href="mailto:tryfonaspapantoniou@gmail.com" className="contact-link glow-border">
-              ✉️ Email
+            <a href="mailto:tryfonaspapantoniou@gmail.com" className="contact-link glow-border" aria-label="Email Tryfonas">
+              <Mail size={17} strokeWidth={1.9} aria-hidden="true" />
+              Email
             </a>
-            <a href="https://linkedin.com/in/tryfonaspapantoniou" className="contact-link glow-border" target="_blank" rel="noopener noreferrer">
-              💼 LinkedIn
+            <a href="https://linkedin.com/in/tryfonaspapantoniou" className="contact-link glow-border" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <LinkedinIcon size={16} aria-hidden="true" />
+              LinkedIn
             </a>
-            <a href="https://github.com/tryfonas-papantoniou" className="contact-link glow-border" target="_blank" rel="noopener noreferrer">
-              🔗 GitHub
+            <a href="https://github.com/tryfonas-papantoniou" className="contact-link glow-border" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <GithubIcon size={16} aria-hidden="true" />
+              GitHub
             </a>
           </div>
         </ScrollReveal>
@@ -479,7 +666,17 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <p>
-          © 2026 Tryfonas Papantoniou. Built with Next.js & AI — deployed on Vercel.
+          © 2026{" "}
+          <a
+            href="https://linkedin.com/in/tryfonaspapantoniou"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-name-link"
+            aria-label="Tryfonas Papantoniou on LinkedIn (opens in a new tab)"
+          >
+            Tryfonas Papantoniou
+          </a>
+          . Built with Next.js & AI — deployed on Vercel.
           {" · "}
           <a href="/how-i-built-this" style={{ color: "var(--accent)", textDecoration: "none" }}>
             How I Built This Site
