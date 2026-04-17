@@ -326,7 +326,7 @@ export default function Home() {
                     <span className="project-tag">RAG</span>
                     <span className="project-tag">Anthropic API</span>
                   </div>
-                  <span className="project-status status-progress">In Progress</span>
+                  <span className="project-status status-live">Live</span>
                 </div>
                 <h3>O2C Policy Assistant</h3>
                 <p>
@@ -337,14 +337,20 @@ export default function Home() {
                 <div className="project-progress">
                   <div className="project-progress-meta">
                     <span className="project-progress-label">Progress</span>
-                    <span className="project-progress-value">35%</span>
+                    <span className="project-progress-value">100%</span>
                   </div>
                   <div className="project-progress-bar">
-                    <div className="project-progress-fill" style={{ width: "35%" }} />
+                    <div className="project-progress-fill" style={{ width: "100%" }} />
                   </div>
                   <div className="project-progress-footer">
-                    <span className="project-target">Target: May 2026</span>
-                    <span className="project-repo">Repo: private</span>
+                    <span className="project-target">Shipped · Apr 2026</span>
+                    <a
+                      className="project-try-link"
+                      href="/projects/rag-demo"
+                      aria-label="Try the RAG demo"
+                    >
+                      Try it <span aria-hidden="true">→</span>
+                    </a>
                   </div>
                 </div>
               </div>
