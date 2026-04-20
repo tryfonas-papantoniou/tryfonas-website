@@ -15,7 +15,7 @@ The AR aging report is the weekly (or daily in closing week) source of truth for
 
 Standard aging buckets used across all entities:
 
-- **Not yet due** — invoice date is within the payment term.
+- **Not yet due** - invoice date is within the payment term.
 - **1 to 30 days past due**.
 - **31 to 60 days past due**.
 - **61 to 90 days past due**.
@@ -26,7 +26,7 @@ Each bucket is broken down by currency, by sales organisation, and by customer r
 
 ## Daily vs. weekly
 
-The report runs weekly as a baseline. It runs daily during the last five working days of the month and the first five of the next month — the period that drives month-end cash and provision numbers.
+The report runs weekly as a baseline. It runs daily during the last five working days of the month and the first five of the next month - the period that drives month-end cash and provision numbers.
 
 The daily version is sent by 09:00 local time. The weekly version is sent Monday morning. Both come from the same SAP transaction (S_ALR_87012168 or the equivalent custom report) and are parsed into a standard Excel format by the reporting macro.
 
@@ -56,17 +56,17 @@ The watchlist is the agenda for the weekly credit committee.
 
 The total of the aging report must tie to the trade receivables line on the balance sheet each month-end. Any difference is investigated and resolved before the books close. Common causes of differences:
 
-- Timing — payment posted to bank but not yet cleared to invoice.
-- Currency — aging at transaction currency vs GL at reporting currency.
-- Intercompany — netted in one view, not the other.
-- Manual journals — accrued credit notes or provision movements not yet mirrored in the subledger.
+- Timing - payment posted to bank but not yet cleared to invoice.
+- Currency - aging at transaction currency vs GL at reporting currency.
+- Intercompany - netted in one view, not the other.
+- Manual journals - accrued credit notes or provision movements not yet mirrored in the subledger.
 
 The reconciliation is signed off by the GL accountant and filed with the month-end folder.
 
 ## Parked and blocked items
 
-Invoices that are parked (saved but not posted) or blocked (posted but flagged) do not appear on the aging. They are tracked on a separate report and cleared weekly. A parked or blocked item more than five working days old is escalated — it is almost always the symptom of a stuck process somewhere else.
+Invoices that are parked (saved but not posted) or blocked (posted but flagged) do not appear on the aging. They are tracked on a separate report and cleared weekly. A parked or blocked item more than five working days old is escalated - it is almost always the symptom of a stuck process somewhere else.
 
 ## Distribution
 
-The aging report goes to: the collections team (detail), credit management (full), sales leadership (summary), controlling (full), FP&A (summary), and — for selected customers — to the sales reps themselves. Distribution is controlled by the reporting team and reviewed annually for access rights.
+The aging report goes to: the collections team (detail), credit management (full), sales leadership (summary), controlling (full), FP&A (summary), and - for selected customers - to the sales reps themselves. Distribution is controlled by the reporting team and reviewed annually for access rights.

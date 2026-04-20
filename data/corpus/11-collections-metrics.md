@@ -13,7 +13,7 @@ Credit and collections is one of the few functions where performance translates 
 
 Two metrics drive the scoreboard: DSO and CEI. Others (ADD, best possible DSO, dispute resolution time) support and explain the top-line numbers.
 
-## DSO — Days Sales Outstanding
+## DSO - Days Sales Outstanding
 
 DSO measures how long it takes on average to collect revenue. Calculation:
 
@@ -33,7 +33,7 @@ We use a three-month rolling DSO as the primary view. It smooths out month-end l
 
 The lowest DSO achievable if every customer paid exactly on their term. It is calculated from the invoice mix and terms currently on the ledger. The gap between actual DSO and best-possible DSO is the collections efficiency opportunity.
 
-## CEI — Collection Effectiveness Index
+## CEI - Collection Effectiveness Index
 
 CEI measures how effectively we collect what was due in a given period.
 
@@ -44,9 +44,9 @@ CEI = ((Opening AR + period credit sales - Closing total AR) /
 
 A CEI of 100% means we collected everything that came due. Our target is 92% or better at the group level. Below 85% is a red flag that triggers a credit committee review.
 
-CEI is harder to game than DSO — shifting terms or pulling cash from next month does not help the index — which is why it sits alongside DSO as a dual metric.
+CEI is harder to game than DSO - shifting terms or pulling cash from next month does not help the index - which is why it sits alongside DSO as a dual metric.
 
-## ADD — Average Days Delinquent
+## ADD - Average Days Delinquent
 
 ADD = DSO - Best Possible DSO
 
@@ -56,15 +56,15 @@ Pure measure of lateness. Isolates the collections performance from the commerci
 
 At the collector level we also track:
 
-- **% current (on time)** — share of the portfolio not yet due or paid on time.
-- **Past due %** — share of the portfolio over the due date.
-- **Past due >60d %** — share of the portfolio more than 60 days past due, the single strongest leading indicator of a bad debt.
-- **Dispute resolution time** — average working days from logging to closing.
-- **Promise-to-pay kept rate** — percentage of promises that land on the committed date.
+- **% current (on time)** - share of the portfolio not yet due or paid on time.
+- **Past due %** - share of the portfolio over the due date.
+- **Past due >60d %** - share of the portfolio more than 60 days past due, the single strongest leading indicator of a bad debt.
+- **Dispute resolution time** - average working days from logging to closing.
+- **Promise-to-pay kept rate** - percentage of promises that land on the committed date.
 
 ## Benchmark targets
 
-Indicative — actual targets are set each year by entity.
+Indicative - actual targets are set each year by entity.
 
 | Metric | Target |
 | --- | --- |
@@ -83,4 +83,4 @@ Indicative — actual targets are set each year by entity.
 
 ## What the metrics are not for
 
-Metrics are a tool, not a goal. A collector who hits the DSO target by allowing a single large customer to take bigger deductions is making the number look better at the cost of margin. The credit manager reviews the mix of behaviours behind the numbers each quarter — not just the numbers themselves.
+Metrics are a tool, not a goal. A collector who hits the DSO target by allowing a single large customer to take bigger deductions is making the number look better at the cost of margin. The credit manager reviews the mix of behaviours behind the numbers each quarter - not just the numbers themselves.

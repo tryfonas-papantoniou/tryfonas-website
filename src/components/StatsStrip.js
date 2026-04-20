@@ -92,7 +92,7 @@ export default function StatsStrip() {
               key={i}
               href={s.href}
               className="stat-item stat-item-link"
-              aria-label={`${s.value} ${s.label} — ${s.sub}. Jump to projects.`}
+              aria-label={`${s.value} ${s.label} - ${s.sub}. Jump to projects.`}
             >
               {inner}
             </a>

@@ -3,7 +3,7 @@
  *
  * Run this whenever you change Pinecone credentials, switch the
  * index, or want to re-populate after rebuilding the JSON index.
- * Cheap — no Voyage calls, no rebuild.
+ * Cheap - no Voyage calls, no rebuild.
  *
  *   node scripts/upsert-pinecone.mjs
  */
@@ -59,7 +59,7 @@ async function main() {
     await index.upsert({ records });
   }
 
-  console.log(`done — ${chunks.length} vectors upserted to ${PINECONE_INDEX}`);
+  console.log(`done - ${chunks.length} vectors upserted to ${PINECONE_INDEX}`);
 }
 
 main().catch((err) => {

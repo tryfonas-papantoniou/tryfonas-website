@@ -3,7 +3,7 @@
  *
  * POST /api/rag
  *   body:  { query: string, history?: Array<{role, content}> }
- *   query: ?backend=in-memory | pinecone  (optional — defaults to in-memory)
+ *   query: ?backend=in-memory | pinecone  (optional - defaults to in-memory)
  *
  * Flow:
  *   1. Rate-limit per client IP.
@@ -25,7 +25,7 @@ import { ensureEnvLoaded } from "@/lib/rag/env";
 
 ensureEnvLoaded();
 
-// We want Node — not the Edge runtime — because the in-memory
+// We want Node - not the Edge runtime - because the in-memory
 // retriever reads `public/rag-index.json` off the function filesystem
 // and the Pinecone SDK expects Node globals.
 export const runtime = "nodejs";
@@ -96,7 +96,7 @@ export async function POST(request) {
   const backend = url.searchParams.get("backend") || "in-memory";
   const retriever = getRetriever(backend);
 
-  // Prior conversation is optional and kept short — the RAG context
+  // Prior conversation is optional and kept short - the RAG context
   // is authoritative, and a long history would just dilute Haiku's
   // attention without improving answers.
   const history = Array.isArray(body?.history) ? body.history.slice(-6) : [];
@@ -178,7 +178,7 @@ export async function POST(request) {
         if (err instanceof Anthropic.RateLimitError) {
           message = "The answer service is rate-limited. Try again in a moment.";
         } else if (err instanceof Anthropic.AuthenticationError) {
-          message = "The answer service is not authenticated — the API key is missing or invalid.";
+          message = "The answer service is not authenticated - the API key is missing or invalid.";
         } else if (
           err?.error?.error?.message &&
           String(err.error.error.message).toLowerCase().includes("credit")
@@ -187,7 +187,7 @@ export async function POST(request) {
           // to flag explicitly so the page doesn't look broken when
           // it's a billing issue.
           message =
-            "The answer service is temporarily unavailable (billing). Retrieval still works — sources are listed above.";
+            "The answer service is temporarily unavailable (billing). Retrieval still works - sources are listed above.";
         }
         send({ type: "error", message });
       } finally {

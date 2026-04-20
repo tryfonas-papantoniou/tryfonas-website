@@ -24,16 +24,16 @@ Every dispute goes into the dispute management tool with a minimum of:
 
 Controlled reason codes keep the reporting clean. The current list has 18 codes grouped under four families:
 
-1. **Pricing** — unit price wrong, discount not applied, currency error.
-2. **Delivery** — short shipment, wrong product, damage on arrival.
-3. **Documentation** — wrong PO, missing delivery note, wrong bill-to.
-4. **Commercial** — rebate not accrued, promo not honored, retro discount.
+1. **Pricing** - unit price wrong, discount not applied, currency error.
+2. **Delivery** - short shipment, wrong product, damage on arrival.
+3. **Documentation** - wrong PO, missing delivery note, wrong bill-to.
+4. **Commercial** - rebate not accrued, promo not honored, retro discount.
 
 Free-text is for context only. Reporting is driven by the code.
 
 ## Ownership
 
-Every dispute has an owner — a named person, not a team. The owner depends on the reason family:
+Every dispute has an owner - a named person, not a team. The owner depends on the reason family:
 
 - Pricing and commercial disputes: Sales + Credit.
 - Delivery disputes: Customer Service + Supply Chain.
@@ -72,7 +72,7 @@ When a dispute is found to be invalid but the amount is too small to chase econo
 - Monthly total per customer capped at 500.
 - Anything above requires a formal write-off approval (see the Bad Debt Provisioning and Write-off policy).
 
-Small-balance write-offs are reported quarterly and reviewed for patterns — a customer that routinely makes small "rounding" deductions is a flag for the account manager.
+Small-balance write-offs are reported quarterly and reviewed for patterns - a customer that routinely makes small "rounding" deductions is a flag for the account manager.
 
 ## Why this matters
 

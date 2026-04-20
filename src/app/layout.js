@@ -20,8 +20,8 @@ const SITE_URL = "https://tryfonaspapantoniou.com";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tryfonas Papantoniou — AI Solutions Builder",
-    template: "%s — Tryfonas Papantoniou",
+    default: "Tryfonas Papantoniou - AI Solutions Builder",
+    template: "%s - Tryfonas Papantoniou",
   },
   description:
     "Computer Science graduate building enterprise-grade AI solutions. From RAG systems to intelligent chatbots, with 6+ years of corporate experience at Accenture, Infosys, and HEINEKEN.",
@@ -40,9 +40,9 @@ export const metadata = {
   creator: "Tryfonas Papantoniou",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Tryfonas Papantoniou — AI Solutions Builder",
+    title: "Tryfonas Papantoniou - AI Solutions Builder",
     description:
-      "Computer Science graduate building enterprise-grade AI solutions — RAG systems, chatbots, and agentic workflows.",
+      "Computer Science graduate building enterprise-grade AI solutions - RAG systems, chatbots, and agentic workflows.",
     url: SITE_URL,
     siteName: "Tryfonas Papantoniou",
     locale: "en_US",
@@ -50,9 +50,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tryfonas Papantoniou — AI Solutions Builder",
+    title: "Tryfonas Papantoniou - AI Solutions Builder",
     description:
-      "Building enterprise-grade AI solutions — RAG, chatbots, agentic workflows.",
+      "Building enterprise-grade AI solutions - RAG, chatbots, agentic workflows.",
   },
   robots: {
     index: true,
@@ -74,7 +74,7 @@ const personSchema = {
   image: `${SITE_URL}/tryfonas.jpg`,
   jobTitle: "AI Solutions Builder",
   description:
-    "Computer Science graduate building enterprise-grade AI solutions — RAG systems, chatbots, and agentic workflows.",
+    "Computer Science graduate building enterprise-grade AI solutions - RAG systems, chatbots, and agentic workflows.",
   email: "mailto:tryfonaspapantoniou@gmail.com",
   address: {
     "@type": "PostalAddress",

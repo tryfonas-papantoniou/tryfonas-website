@@ -24,10 +24,10 @@ import StatsStrip from "@/components/StatsStrip";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import CodeTypingAnimation from "@/components/CodeTypingAnimation";
 
-// Tokens for the animated hero code panel — a compact, accurate RAG example
+// Tokens for the animated hero code panel - a compact, accurate RAG example
 // using the real Anthropic messages API and Pinecone index patterns.
 const HERO_CODE_LINES = [
-  [{ text: "# RAG Knowledge Assistant — Python SDK", type: "comment" }],
+  [{ text: "# RAG Knowledge Assistant - Python SDK", type: "comment" }],
   [
     { text: "from", type: "keyword" },
     { text: " anthropic " },
@@ -148,7 +148,7 @@ export default function Home() {
               that solve real problems
             </h1>
             <p className="hero-description">
-              Computer Science graduate building enterprise-grade AI solutions —
+              Computer Science graduate building enterprise-grade AI solutions -
               from RAG systems to intelligent chatbots. With 6+ years of
               corporate experience, I understand the real problems that AI is
               best positioned to solve.
@@ -209,14 +209,14 @@ export default function Home() {
               <p>
                 I&apos;m a <strong>Computer Science graduate</strong> from
                 Greece, currently based in Kraków, Poland. My passion is{" "}
-                <strong>artificial intelligence</strong> — specifically building
+                <strong>artificial intelligence</strong> - specifically building
                 practical AI tools that solve real business problems.
               </p>
               <p>
                 I spent 6+ years working at major multinationals like{" "}
                 <strong>Accenture</strong>, <strong>Infosys</strong>, and{" "}
                 <strong>HEINEKEN</strong>, where I gained deep understanding of
-                how large enterprises operate — the processes, the pain points,
+                how large enterprises operate - the processes, the pain points,
                 and the communication dynamics that make or break projects.
               </p>
               <p>
@@ -226,7 +226,7 @@ export default function Home() {
                   I know what the actual problems look like from the inside.
                 </strong>{" "}
                 Now I&apos;m combining that real-world understanding with
-                hands-on AI development — building RAG systems, chatbots, and
+                hands-on AI development - building RAG systems, chatbots, and
                 automation tools inspired by the problems I&apos;ve seen
                 firsthand.
               </p>
@@ -257,14 +257,14 @@ export default function Home() {
           <span className="section-label">Projects &amp; Roadmap</span>
           <h2 className="section-title">What I&apos;ve Built &amp; What&apos;s Next</h2>
           <p className="section-subtitle">
-            One live project — this site itself — and three AI tools in active
+            One live project - this site itself - and three AI tools in active
             development, each demonstrating a different aspect of modern AI
             engineering: retrieval-augmented generation, document intelligence,
             and agentic workflows.
           </p>
           <div className="projects-intro">
             The three tools below are inspired by real inefficiencies I
-            encountered during my 6+ years in enterprise finance operations —
+            encountered during my 6+ years in enterprise finance operations -
             manual processes, slow decisions, and inconsistent data handling
             that are exactly the kind of problems AI can solve.
           </div>
@@ -272,7 +272,7 @@ export default function Home() {
         <ScrollReveal stagger>
           <div className="projects-grid">
 
-            {/* This Site — Live */}
+            {/* This Site - Live */}
             <div className="project-card glow-border fade-up">
               <div className="project-info">
                 <div className="project-info-top">
@@ -283,9 +283,9 @@ export default function Home() {
                   </div>
                   <span className="project-status status-live">● Live</span>
                 </div>
-                <h3>tryfonas.dev — This Site</h3>
+                <h3>tryfonas.dev - This Site</h3>
                 <p>
-                  Portfolio built through AI-assisted development — custom
+                  Portfolio built through AI-assisted development - custom
                   canvas starfield, scroll-linked aurora, responsive layout,
                   deployed on Vercel with GitHub CI.
                 </p>
@@ -330,8 +330,8 @@ export default function Home() {
                 </div>
                 <h3>O2C Policy Assistant</h3>
                 <p>
-                  RAG-powered chatbot for Order-to-Cash policy questions —
-                  invoicing, collections, and dispute resolution — with
+                  RAG-powered chatbot for Order-to-Cash policy questions -
+                  invoicing, collections, and dispute resolution - with
                   source citations.
                 </p>
                 <div className="project-progress">
@@ -385,7 +385,7 @@ export default function Home() {
                 </div>
                 <h3>Invoice Classifier</h3>
                 <p>
-                  Automated invoice categorization and routing using LLMs —
+                  Automated invoice categorization and routing using LLMs -
                   turning hours of manual document processing into seconds.
                 </p>
                 <div className="project-progress">
@@ -435,7 +435,7 @@ export default function Home() {
                 </div>
                 <h3>AR Insights Dashboard</h3>
                 <p>
-                  AI-powered accounts receivable analytics — ask questions about
+                  AI-powered accounts receivable analytics - ask questions about
                   financial data in plain English and get intelligent
                   visualizations.
                 </p>
@@ -500,7 +500,7 @@ export default function Home() {
                 <Brain size={22} strokeWidth={1.8} />
               </div>
               <h3>Large Language Models</h3>
-              <p>Building applications with LLMs — prompt engineering, system design, and API integrations.</p>
+              <p>Building applications with LLMs - prompt engineering, system design, and API integrations.</p>
               <div className="tech-list">
                 <span className="tech-tag">Claude API</span>
                 <span className="tech-tag">Prompt Engineering</span>
@@ -512,7 +512,7 @@ export default function Home() {
                 <Search size={22} strokeWidth={1.8} />
               </div>
               <h3>RAG & Vector Search</h3>
-              <p>Building retrieval-augmented generation pipelines — embedding documents, vector storage, and context-aware retrieval.</p>
+              <p>Building retrieval-augmented generation pipelines - embedding documents, vector storage, and context-aware retrieval.</p>
               <div className="tech-list">
                 <span className="tech-tag">Pinecone</span>
                 <span className="tech-tag">Embeddings</span>
@@ -553,7 +553,7 @@ export default function Home() {
                 <Wrench size={22} strokeWidth={1.8} />
               </div>
               <h3>AI-Assisted Development</h3>
-              <p>Using AI as a development partner — turning ideas into working software through AI collaboration.</p>
+              <p>Using AI as a development partner - turning ideas into working software through AI collaboration.</p>
               <div className="tech-list">
                 <span className="tech-tag">Cursor</span>
                 <span className="tech-tag">Claude</span>
@@ -592,7 +592,7 @@ export default function Home() {
                   <Globe size={19} strokeWidth={1.9} />
                 </div>
                 <div className="edu-info">
-                  <h4>Erasmus+ — Business Administration</h4>
+                  <h4>Erasmus+ - Business Administration</h4>
                   <p>BA School of Business & Finance, Riga, Latvia</p>
                 </div>
               </div>
@@ -607,7 +607,7 @@ export default function Home() {
                 </div>
                 <div className="edu-info">
                   <h4>AI Technical Practitioner (AITECH)</h4>
-                  <p>Cisco — 2026</p>
+                  <p>Cisco - 2026</p>
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
@@ -616,7 +616,7 @@ export default function Home() {
                 </div>
                 <div className="edu-info">
                   <h4>AI Business Practitioner (AIBIZ)</h4>
-                  <p>Cisco — 2026</p>
+                  <p>Cisco - 2026</p>
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
@@ -625,7 +625,7 @@ export default function Home() {
                 </div>
                 <div className="edu-info">
                   <h4>Reinvention with Agentic AI</h4>
-                  <p>Accenture — 2026</p>
+                  <p>Accenture - 2026</p>
                 </div>
               </div>
               <div className="edu-item glow-border fade-up">
@@ -634,7 +634,7 @@ export default function Home() {
                 </div>
                 <div className="edu-info">
                   <h4>CS50 ReadyPlayer50</h4>
-                  <p>Harvard University — 2023</p>
+                  <p>Harvard University - 2023</p>
                 </div>
               </div>
             </div>
@@ -648,7 +648,7 @@ export default function Home() {
           <span className="section-label">Contact</span>
           <h2 className="section-title">Let&apos;s Connect</h2>
           <p className="section-subtitle">
-            Looking for my next role in AI — building tools, implementing
+            Looking for my next role in AI - building tools, implementing
             solutions, and bridging the gap between technology and business.
             Let&apos;s talk.
           </p>
@@ -682,7 +682,7 @@ export default function Home() {
           >
             Tryfonas Papantoniou
           </a>
-          . Built with Next.js & AI — deployed on Vercel.
+          . Built with Next.js & AI - deployed on Vercel.
           {" · "}
           <a href="/how-i-built-this" style={{ color: "var(--accent)", textDecoration: "none" }}>
             How I Built This Site

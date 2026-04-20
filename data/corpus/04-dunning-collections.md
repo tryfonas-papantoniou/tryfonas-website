@@ -23,7 +23,7 @@ The cadence below is the default for B-category customers. A-category customers 
 | L4 | +60 | Final notice, case review with Credit Manager | Credit Manager |
 | L5 | +90 | Handover to external collections or legal | Credit Director |
 
-L1 and L2 are run from SAP on a weekly dunning cycle. L3 through L5 are manual — they require a judgement call on whether to escalate, negotiate a payment plan, or pause while a dispute is resolved.
+L1 and L2 are run from SAP on a weekly dunning cycle. L3 through L5 are manual - they require a judgement call on whether to escalate, negotiate a payment plan, or pause while a dispute is resolved.
 
 ## When to pause dunning
 
@@ -60,4 +60,4 @@ Payment plans sit in the collector's notes and as a side-agreement document atta
 
 ## Handover to legal or external agency
 
-The decision to move a case to L5 is made jointly by the Credit Director and Legal. Inputs to the decision: the age and size of the balance, the customer's engagement level, the cost of action, and whether the customer is still trading. Once a case is with an external agency, all communication runs through them — the collector does not contact the customer directly.
+The decision to move a case to L5 is made jointly by the Credit Director and Legal. Inputs to the decision: the age and size of the balance, the customer's engagement level, the cost of action, and whether the customer is still trading. Once a case is with an external agency, all communication runs through them - the collector does not contact the customer directly.

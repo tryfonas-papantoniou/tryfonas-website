@@ -55,12 +55,12 @@ export default function CodeTypingAnimation({
           return { ...prev, char: prev.char + 1 };
         }
 
-        // Segment finished — next segment
+        // Segment finished - next segment
         if (prev.seg + 1 < currentLine.length) {
           return { line: prev.line, seg: prev.seg + 1, char: 0 };
         }
 
-        // Line finished — next line
+        // Line finished - next line
         if (prev.line + 1 >= lines.length) {
           setDone(true);
           onComplete?.();

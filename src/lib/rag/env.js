@@ -11,7 +11,7 @@
  * The fix: at module load we parse `.env.local` directly and fill
  * in anything that is currently empty or missing. Production on
  * Vercel doesn't ship `.env.local`, so this code path is a no-op
- * there — the real env is already populated by the platform.
+ * there - the real env is already populated by the platform.
  */
 
 import { readFileSync } from "node:fs";
@@ -47,14 +47,14 @@ export function ensureEnvLoaded() {
     const raw = readFileSync(filePath, "utf8");
     const parsed = parse(raw);
     for (const [key, value] of Object.entries(parsed)) {
-      // Only fill in keys that are missing or empty — do NOT
+      // Only fill in keys that are missing or empty - do NOT
       // overwrite a value that was deliberately set by the platform.
       if (!process.env[key]) {
         process.env[key] = value;
       }
     }
   } catch {
-    // .env.local is optional — production environments inject the
+    // .env.local is optional - production environments inject the
     // keys some other way.
   }
 }

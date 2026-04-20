@@ -18,8 +18,8 @@ export default function ParticleBackground() {
     // On mousedown, a radial impulse shoves nearby particles outward
     // away from the click point (distance-based falloff), then
     // `speedDamping` eases every particle's magnitude back toward its
-    // target — base speed normally, boosted speed while cursor is on
-    // screen — so bursts decay gracefully over ~1–2 seconds.
+    // target - base speed normally, boosted speed while cursor is on
+    // screen - so bursts decay gracefully over ~1–2 seconds.
     let mouseX = 0;
     let mouseY = 0;
     let cursorActive = false;
@@ -113,8 +113,8 @@ export default function ParticleBackground() {
           twinklePhase: Math.random() * Math.PI * 2,
           // Each star gets its OWN speed on page load, spanning almost
           // an order of magnitude. A squared random biases the
-          // distribution toward slower stars — most gently breathe,
-          // a few noticeably pulse — while the max stays tame enough
+          // distribution toward slower stars - most gently breathe,
+          // a few noticeably pulse - while the max stays tame enough
           // that no star feels frantic.
           //
           //   min ≈ 0.0009  (very slow, multi-second pulse)
@@ -131,7 +131,7 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, w, h);
 
       for (const s of stars) {
-        // Cursor attraction — rotate velocity toward cursor AND
+        // Cursor attraction - rotate velocity toward cursor AND
         // target a slightly boosted magnitude so particles move
         // faster when heading to where the cursor is.
         if (cursorActive) {
@@ -148,7 +148,7 @@ export default function ParticleBackground() {
           }
         }
 
-        // Speed damping — gently pull each particle's speed magnitude
+        // Speed damping - gently pull each particle's speed magnitude
         // back toward its target (boosted when cursor is on screen,
         // base otherwise). This is what makes click-burst impulses
         // decay back to the natural flow instead of runaway fast.
@@ -217,7 +217,7 @@ export default function ParticleBackground() {
     const handleMouseLeave = () => {
       cursorActive = false;
     };
-    // Click burst — shove every particle within `clickRadius` radially
+    // Click burst - shove every particle within `clickRadius` radially
     // away from the click point. Strength falls off linearly so
     // particles at the center get the full kick and edge particles
     // barely move. Speed damping (above) decays the burst back to
@@ -239,7 +239,7 @@ export default function ParticleBackground() {
         }
       }
     };
-    // Disable on touch devices — no hover/cursor concept, would feel odd
+    // Disable on touch devices - no hover/cursor concept, would feel odd
     const isTouchOnly =
       typeof window !== "undefined" &&
       window.matchMedia("(hover: none)").matches;

@@ -10,14 +10,14 @@
  * - `InMemoryRetriever` (default) loads `public/rag-index.json`
  *   on first use and does a straight cosine-similarity sweep over
  *   all chunks. At 26 chunks × 1024 floats it runs in well under
- *   a millisecond — cheaper than a network round trip. This is
+ *   a millisecond - cheaper than a network round trip. This is
  *   the primary backend for the deployed demo.
  *
  * - `PineconeRetriever` delegates to a serverless Pinecone index
  *   containing the same vectors. It exists to show the swap is a
  *   one-line change and to back a "?backend=pinecone" switch in
  *   the API route, which the demo UI exposes as a toggle. It is
- *   not faster than the in-memory path at this corpus size — it's
+ *   not faster than the in-memory path at this corpus size - it's
  *   there to demonstrate the architecture, not as an optimisation.
  *
  * A real production system would move to Pinecone (or equivalent)
@@ -128,7 +128,7 @@ export function getRetriever(backend = "in-memory") {
     const indexName = process.env.PINECONE_INDEX;
     if (!apiKey || !indexName) {
       console.warn(
-        "Pinecone env vars missing — falling back to in-memory retriever"
+        "Pinecone env vars missing - falling back to in-memory retriever"
       );
       return new InMemoryRetriever();
     }
@@ -142,7 +142,7 @@ export function getRetriever(backend = "in-memory") {
 /**
  * Embed a user query with Voyage. The API route uses this before
  * handing off to a retriever. We use `input_type: "query"` so
- * Voyage applies the asymmetric search prompt template — documents
+ * Voyage applies the asymmetric search prompt template - documents
  * were embedded with `input_type: "document"` in the build step.
  */
 export async function embedQuery(query) {

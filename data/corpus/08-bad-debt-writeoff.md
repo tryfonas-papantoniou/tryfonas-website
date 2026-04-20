@@ -17,10 +17,10 @@ Provisioning is not the same as writing off. A provision is an estimate; a write
 
 We use a two-layer model:
 
-1. **Specific provision** — for individually significant or clearly impaired receivables. Applied case-by-case when we know a customer is in trouble (bankruptcy filed, payment plan broken, legal case opened).
-2. **General provision** — a matrix applied to the remaining portfolio based on aging bucket and customer risk category.
+1. **Specific provision** - for individually significant or clearly impaired receivables. Applied case-by-case when we know a customer is in trouble (bankruptcy filed, payment plan broken, legal case opened).
+2. **General provision** - a matrix applied to the remaining portfolio based on aging bucket and customer risk category.
 
-The matrix (illustrative — the actual rates are reviewed annually):
+The matrix (illustrative - the actual rates are reviewed annually):
 
 | Aging bucket | A-risk | B-risk | C-risk | D-risk |
 | --- | --- | --- | --- | --- |

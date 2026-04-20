@@ -8,7 +8,7 @@
  * /api/rag?backend=pinecone path has data to query.
  *
  * The JSON file is loaded at request time by the in-memory retriever
- * and is intentionally small — 12 docs × ~6 chunks × 1024 floats at
+ * and is intentionally small - 12 docs × ~6 chunks × 1024 floats at
  * 4 bytes each is roughly 300 KB after JSON overhead. That sits
  * comfortably in Node's memory on a Vercel serverless function.
  *
@@ -25,7 +25,7 @@ try {
   const { config } = await import("dotenv");
   config({ path: ".env.local" });
 } catch {
-  // dotenv is optional — not installed in CI, not required on Vercel.
+  // dotenv is optional - not installed in CI, not required on Vercel.
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -51,7 +51,7 @@ if (!VOYAGE_API_KEY) {
 
 /**
  * Parse YAML-ish frontmatter (id/title/owner/version) from the top of
- * a markdown file. We only support string values on single lines —
+ * a markdown file. We only support string values on single lines -
  * nothing fancy, the corpus is hand-authored and stable.
  */
 function parseFrontmatter(raw) {
@@ -149,7 +149,7 @@ async function embedBatch(texts, inputType = "document", attempt = 1) {
     }),
   });
   if (resp.status === 429 && attempt <= 4) {
-    const wait = 25000; // 25s — safely past the 20s free-tier window
+    const wait = 25000; // 25s - safely past the 20s free-tier window
     console.log(`  rate-limited (429), waiting ${wait / 1000}s (attempt ${attempt})…`);
     await new Promise((r) => setTimeout(r, wait));
     return embedBatch(texts, inputType, attempt + 1);
@@ -191,20 +191,20 @@ async function embedAll(chunks) {
 /* -------------------------------- pinecone ------------------------------- */
 
 /**
- * Optional — upsert chunks + embeddings to Pinecone so the pluggable
+ * Optional - upsert chunks + embeddings to Pinecone so the pluggable
  * backend has data. Skipped silently if credentials are not present.
  * We upsert in batches of 100, which is the Pinecone per-request cap.
  */
 async function upsertToPinecone(chunks) {
   if (!PINECONE_API_KEY || !PINECONE_INDEX) {
-    console.log("  pinecone credentials missing — skipping upsert");
+    console.log("  pinecone credentials missing - skipping upsert");
     return;
   }
   let Pinecone;
   try {
     ({ Pinecone } = await import("@pinecone-database/pinecone"));
   } catch {
-    console.log("  @pinecone-database/pinecone not installed — skipping upsert");
+    console.log("  @pinecone-database/pinecone not installed - skipping upsert");
     return;
   }
   const pc = new Pinecone({ apiKey: PINECONE_API_KEY });
@@ -260,7 +260,7 @@ async function main() {
   const vectors = await embedAll(rawChunks);
   const chunks = rawChunks.map((c, i) => ({ ...c, embedding: vectors[i] }));
 
-  // Sanity check — dimension should match what the app expects.
+  // Sanity check - dimension should match what the app expects.
   if (chunks[0].embedding.length !== EMBEDDING_DIM) {
     throw new Error(
       `Unexpected embedding dimension ${chunks[0].embedding.length} (expected ${EMBEDDING_DIM})`

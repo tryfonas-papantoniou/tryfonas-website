@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 
 export const metadata = {
-  title: "How I Built This Site — Tryfonas Papantoniou",
-  description: "A transparent look at how I used AI tools to design, build, and deploy this portfolio site — without writing code manually.",
+  title: "How I Built This Site - Tryfonas Papantoniou",
+  description: "A transparent look at how I used AI tools to design, build, and deploy this portfolio site - without writing code manually.",
 };
 
 export default function HowIBuiltThis() {
@@ -24,7 +24,7 @@ export default function HowIBuiltThis() {
             How I Built This Site
           </h1>
           <p className="hero-description" style={{ maxWidth: "100%" }}>
-            This site is itself a demonstration of what I do — using AI tools to build
+            This site is itself a demonstration of what I do - using AI tools to build
             professional, production-grade software. Here&apos;s a transparent look at the
             process, tools, and decisions behind it.
           </p>
@@ -36,13 +36,13 @@ export default function HowIBuiltThis() {
           <div className="build-section">
             <h2 className="build-heading">The Approach</h2>
             <p className="build-text">
-              I&apos;m not a professional developer — and that&apos;s the point. This entire site
+              I&apos;m not a professional developer - and that&apos;s the point. This entire site
               was built through <strong>AI-assisted development</strong>: I described what I wanted,
               made design decisions, and directed the AI to write the code. Every component,
               animation, and layout was created through collaboration between me and Claude (Anthropic&apos;s AI).
             </p>
             <p className="build-text">
-              This is exactly the skill I&apos;m positioning myself around — the ability to use AI
+              This is exactly the skill I&apos;m positioning myself around - the ability to use AI
               as a force multiplier to produce real, working, professional-quality output without
               being a senior developer.
             </p>
@@ -53,7 +53,7 @@ export default function HowIBuiltThis() {
             <div className="build-stack-grid">
               <div className="build-stack-item">
                 <h3>Next.js</h3>
-                <p>React-based framework. The foundation of the site — handles routing, server-side rendering, and image optimization.</p>
+                <p>React-based framework. The foundation of the site - handles routing, server-side rendering, and image optimization.</p>
               </div>
               <div className="build-stack-item">
                 <h3>Vercel</h3>
@@ -61,7 +61,7 @@ export default function HowIBuiltThis() {
               </div>
               <div className="build-stack-item">
                 <h3>Cursor</h3>
-                <p>AI-powered code editor. My primary workspace — used for all file editing, terminal commands, and project navigation.</p>
+                <p>AI-powered code editor. My primary workspace - used for all file editing, terminal commands, and project navigation.</p>
               </div>
               <div className="build-stack-item">
                 <h3>Claude (Anthropic)</h3>
@@ -85,7 +85,7 @@ export default function HowIBuiltThis() {
                 <div className="build-step-number">01</div>
                 <div className="build-step-content">
                   <h3>Infrastructure Setup</h3>
-                  <p>Set up the Next.js project, connected GitHub to Vercel, pointed my domain from Hostinger — all guided by Claude step by step.</p>
+                  <p>Set up the Next.js project, connected GitHub to Vercel, pointed my domain from Hostinger - all guided by Claude step by step.</p>
                 </div>
               </div>
               <div className="build-step">
@@ -99,7 +99,7 @@ export default function HowIBuiltThis() {
                 <div className="build-step-number">03</div>
                 <div className="build-step-content">
                   <h3>Component Building</h3>
-                  <p>Once the design was approved, Claude converted the HTML into React components — Navigation, ScrollReveal, ParticleBackground, and more.</p>
+                  <p>Once the design was approved, Claude converted the HTML into React components - Navigation, ScrollReveal, ParticleBackground, and more.</p>
                 </div>
               </div>
               <div className="build-step">
@@ -122,14 +122,14 @@ export default function HowIBuiltThis() {
           <div className="build-section">
             <h2 className="build-heading">What This Demonstrates</h2>
             <p className="build-text">
-              Building this site wasn&apos;t about proving I can write React from scratch — it was
+              Building this site wasn&apos;t about proving I can write React from scratch - it was
               about demonstrating a modern, practical skill: <strong>the ability to direct AI to produce
               professional results</strong>. I made every design decision, provided the content and
               context, managed the project, and quality-checked every output. The AI handled
               the syntax.
             </p>
             <p className="build-text">
-              This is the same approach I apply to building AI tools — understanding the problem,
+              This is the same approach I apply to building AI tools - understanding the problem,
               designing the solution, and leveraging AI to execute it at a level that would
               traditionally require a full development team.
             </p>
@@ -142,7 +142,7 @@ export default function HowIBuiltThis() {
       </section>
 
       <footer>
-        <p>© 2026 Tryfonas Papantoniou. Built with Next.js & AI — deployed on Vercel.</p>
+        <p>© 2026 Tryfonas Papantoniou. Built with Next.js & AI - deployed on Vercel.</p>
       </footer>
     </>
   );

@@ -9,7 +9,7 @@ import { Send, FileText, AlertTriangle, RefreshCw } from "lucide-react";
  * Conversation state lives in the component. The last six turns are
  * sent to the API on each request so follow-up questions stay in
  * context, but the authoritative knowledge is always the retrieved
- * chunks — we don't try to build a long-running conversation agent.
+ * chunks - we don't try to build a long-running conversation agent.
  *
  * The response is NDJSON: each line is a tagged event (`sources`,
  * `text`, `done`, `error`). Sources arrive first, then text tokens
@@ -55,7 +55,7 @@ export default function RagChat() {
 
     // Build the history to send: everything before this turn, plus
     // the new user turn. We cap server-side at six turns but send
-    // everything — the server trims.
+    // everything - the server trims.
     const history = messages.map((m) => ({
       role: m.role,
       content: m.content,
@@ -84,7 +84,7 @@ export default function RagChat() {
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
 
-        // NDJSON parsing — split on newlines, keep the last partial
+        // NDJSON parsing - split on newlines, keep the last partial
         // line in the buffer for the next chunk.
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
@@ -133,7 +133,7 @@ export default function RagChat() {
       if (err.name !== "AbortError") {
         setError(err.message || "Something went wrong.");
         // Strip the empty assistant placeholder if the stream failed
-        // before any text arrived — better UX than leaving a blank bubble.
+        // before any text arrived - better UX than leaving a blank bubble.
         setMessages((prev) => {
           const last = prev[prev.length - 1];
           if (last && last.role === "assistant" && !last.content) {

@@ -9,7 +9,7 @@ version: 3.4
 
 ## What credit hold means
 
-When a customer is on credit hold, new sales orders are blocked in SAP and cannot be delivered until the hold is released. It is the single most effective tool we have for protecting receivables — and also the single most unpopular one with sales, so clear rules are essential.
+When a customer is on credit hold, new sales orders are blocked in SAP and cannot be delivered until the hold is released. It is the single most effective tool we have for protecting receivables - and also the single most unpopular one with sales, so clear rules are essential.
 
 ## What triggers a hold
 
@@ -26,10 +26,10 @@ Automatic holds happen at order entry, not at delivery. This catches the issue e
 
 A credit analyst reviews every held order. The possible outcomes:
 
-- **Release** — the issue has been resolved (payment received, dispute closed, limit increased).
-- **Partial release** — the order is split, and the portion covered by available credit is released. The rest stays on hold.
-- **Convert to pro-forma** — customer pays in advance for this order.
-- **Reject** — the order is canceled and sales is notified.
+- **Release** - the issue has been resolved (payment received, dispute closed, limit increased).
+- **Partial release** - the order is split, and the portion covered by available credit is released. The rest stays on hold.
+- **Convert to pro-forma** - customer pays in advance for this order.
+- **Reject** - the order is canceled and sales is notified.
 
 Target response time is four working hours during local business hours. In practice, routine releases are done in under an hour. Complex cases (negotiating a one-off limit increase, structuring a payment plan) take longer and are flagged to sales with an expected resolution time.
 
@@ -63,7 +63,7 @@ A customer on hold for more than 14 consecutive days moves into an "extended hol
 - Move to pro-forma for all future orders.
 - Handover to collections escalation.
 
-The longer a customer sits on hold, the less likely they are to come back. Extended hold triggers a clear decision — not drift.
+The longer a customer sits on hold, the less likely they are to come back. Extended hold triggers a clear decision - not drift.
 
 ## Reporting
 

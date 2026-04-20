@@ -61,8 +61,8 @@ A clean month-end in cash application is the foundation of a clean AR aging repo
 
 ## Key metrics
 
-- **Auto-match rate** — percentage of payments cleared without manual touch.
-- **Unapplied balance** — total cash sitting in suspense, aged.
-- **Time to clear** — average days between payment arrival and full clearing.
+- **Auto-match rate** - percentage of payments cleared without manual touch.
+- **Unapplied balance** - total cash sitting in suspense, aged.
+- **Time to clear** - average days between payment arrival and full clearing.
 
 These are published weekly. A drop in auto-match rate is usually the first visible sign of a customer-side process change (new ERP, new payment platform, new remittance format) and is a useful leading indicator.

@@ -3,7 +3,7 @@ import RagChat from "@/components/RagChat";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "RAG Knowledge Assistant — Tryfonas Papantoniou",
+  title: "RAG Knowledge Assistant",
   description:
     "A live retrieval-augmented generation demo: ask questions about a fictional enterprise's order-to-cash policy and get cited, grounded answers from 12 indexed documents.",
 };
@@ -15,7 +15,7 @@ export const metadata = {
  *   Voyage embeddings → pluggable retriever → Claude Haiku 4.5.
  *
  * The chat widget is interactive; everything else on the page is
- * static context — what the system does, what's indexed, what's
+ * static context: what the system does, what's indexed, what's
  * under the hood. Keeping it visibly simple so visitors grasp the
  * architecture in 30 seconds.
  */
@@ -34,10 +34,11 @@ export default function RagDemoPage() {
           <span className="section-label">Project · Live Demo</span>
           <h1 className="rag-page-title">RAG Knowledge Assistant</h1>
           <p className="rag-page-lead">
-            Ask a question about a fictional enterprise's order-to-cash policy.
-            Answers come from 12 indexed documents — credit limits, dunning
-            cadences, dispute resolution, bad-debt provisioning — and every
-            claim is cited back to the source chunk it came from.
+            Ask a question about a fictional enterprise&apos;s order-to-cash
+            policy. Answers come from 12 indexed documents covering credit
+            limits, dunning cadences, dispute resolution, and bad-debt
+            provisioning. Every claim is cited back to the source chunk it
+            came from.
           </p>
 
           <div className="rag-stack-row" aria-label="Tech stack">
@@ -76,7 +77,7 @@ export default function RagDemoPage() {
               <div className="rag-step-body">
                 Your question is embedded the same way, then the retriever
                 ranks chunks by cosine similarity. The top four go into the
-                prompt. A toggle swaps the in-memory backend for Pinecone —
+                prompt. A toggle swaps the in-memory backend for Pinecone:
                 same interface, different store.
               </div>
             </li>

@@ -3,13 +3,13 @@
  *
  * Why in-memory: this is a personal site, traffic is low, and the
  * goal is to prevent a single visitor from burning through the
- * Anthropic + Voyage budgets — not to survive a coordinated DDoS.
+ * Anthropic + Voyage budgets - not to survive a coordinated DDoS.
  * A proper distributed limiter (Upstash, Redis, Cloudflare) would
  * be an overbuild for the current load.
  *
  * Limits are per-IP and per-minute. Each process keeps its own
  * counters, so on Vercel's serverless runtime the effective limit
- * is per cold-start-container — slightly generous in practice,
+ * is per cold-start-container - slightly generous in practice,
  * which is the tradeoff we're happy to make.
  */
 
@@ -19,8 +19,8 @@ const MAX_PER_WINDOW = 8;
 
 /**
  * Check whether a request from `ip` is allowed. Returns:
- *   { allowed: true }                            — proceed
- *   { allowed: false, retryAfterSec: number }   — over limit
+ *   { allowed: true }                            - proceed
+ *   { allowed: false, retryAfterSec: number }   - over limit
  *
  * The limiter is a simple sliding-window counter: we keep the
  * timestamps of recent requests and drop anything outside the
@@ -43,7 +43,7 @@ export function checkRateLimit(ip) {
   recent.push(now);
   buckets.set(ip, recent);
   // Periodically trim the Map so long-running processes don't leak
-  // memory. Cheap sweep — O(n) on the number of distinct IPs.
+  // memory. Cheap sweep - O(n) on the number of distinct IPs.
   if (buckets.size > 500) {
     for (const [key, arr] of buckets) {
       if (!arr.some((t) => now - t < WINDOW_MS)) buckets.delete(key);

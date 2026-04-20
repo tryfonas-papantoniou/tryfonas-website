@@ -19,9 +19,9 @@ All trading customers across the group, including intercompany counterparties th
 
 Every new customer starts with a provisional limit based on three inputs:
 
-1. **Requested line** — the volume sales expects in the first 12 months.
-2. **External credit score** — we use Dun & Bradstreet as the primary source, with a secondary check in Creditsafe for EU counterparties.
-3. **Payment history** — if the customer has traded with another group entity, we pull their 12-month payment record from that ledger.
+1. **Requested line** - the volume sales expects in the first 12 months.
+2. **External credit score** - we use Dun & Bradstreet as the primary source, with a secondary check in Creditsafe for EU counterparties.
+3. **Payment history** - if the customer has traded with another group entity, we pull their 12-month payment record from that ledger.
 
 The provisional limit is the lower of: 10% of the customer's net worth, the D&B recommended limit, or the requested line.
 
@@ -41,10 +41,10 @@ All approvals must be in writing (email is accepted if archived to the credit ca
 
 Every active customer is reviewed once per year. The review can trigger one of four outcomes:
 
-- **Confirm** — keep the current limit.
-- **Increase** — supported by clean payment history and a fresh external score.
-- **Decrease** — triggered by deteriorating DSO, disputes, or score downgrades.
-- **Suspend** — the customer moves to pro-forma until the issue is resolved.
+- **Confirm** - keep the current limit.
+- **Increase** - supported by clean payment history and a fresh external score.
+- **Decrease** - triggered by deteriorating DSO, disputes, or score downgrades.
+- **Suspend** - the customer moves to pro-forma until the issue is resolved.
 
 Reviews are scheduled in SAP via transaction FD32 and tracked on the credit team's aging review dashboard.
 
@@ -61,7 +61,7 @@ The analyst has five working days to issue a recommendation. A recommendation th
 
 ## Temporary overrides
 
-Sales can request a temporary credit limit increase for a single order — for example, a seasonal peak or a one-off project. Temporary overrides:
+Sales can request a temporary credit limit increase for a single order - for example, a seasonal peak or a one-off project. Temporary overrides:
 
 - Must be tied to a specific sales order number.
 - Expire automatically when the order is invoiced and paid, or after 60 days.
