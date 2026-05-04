@@ -40,7 +40,7 @@ const EXPERIENCE = [
     period: "Feb 2020 - Oct 2021",
     location: "Kraków, Poland",
     summary:
-      "Managed a 240+ customer portfolio in order-to-cash for one of the world's largest brewers. First corporate role after university - where I learned how finance operations actually run inside a multinational.",
+      "Managed a 240+ customer portfolio in order-to-cash for one of the world's largest brewers. First corporate role after university - where I learned how Finance and Operations actually run inside a multinational.",
     accent: "#22c55e",
   },
 ];

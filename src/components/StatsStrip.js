@@ -8,8 +8,8 @@ import { useEffect, useRef, useState } from "react";
  */
 const STATS = [
   { value: 6, suffix: "+", label: "years in enterprise", sub: "Accenture · Infosys · HEINEKEN" },
-  { value: 3, suffix: "", label: "multinationals", sub: "across finance operations" },
-  { value: 4, suffix: "+", label: "AI certifications", sub: "Cisco · Accenture · Harvard" },
+  { value: 3, suffix: "", label: "multinationals", sub: "across Finance and Operations" },
+  { value: 4, suffix: "+", label: "AI certifications", sub: "Cisco · Accenture" },
   {
     value: 4,
     suffix: "",

@@ -209,7 +209,7 @@ export default function Home() {
               <p>
                 I&apos;m a <strong>Computer Science graduate</strong> from
                 Greece, currently based in Kraków, Poland. My passion is{" "}
-                <strong>artificial intelligence</strong> - specifically building
+                <strong>Artificial Intelligence</strong> - specifically building
                 practical AI tools that solve real business problems.
               </p>
               <p>
@@ -264,7 +264,7 @@ export default function Home() {
           </p>
           <div className="projects-intro">
             The three tools below are inspired by real inefficiencies I
-            encountered during my 6+ years in enterprise finance operations -
+            encountered during my 6+ years in enterprise Finance and Operations -
             manual processes, slow decisions, and inconsistent data handling
             that are exactly the kind of problems AI can solve.
           </div>
