@@ -372,51 +372,60 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Invoice Classifier */}
+            {/* Reconciliation Copilot */}
             <div className="project-card glow-border fade-up">
               <div className="project-info">
                 <div className="project-info-top">
                   <div className="project-tags">
-                    <span className="project-tag">Document AI</span>
-                    <span className="project-tag">Classification</span>
-                    <span className="project-tag">Automation</span>
+                    <span className="project-tag">Reconciliation</span>
+                    <span className="project-tag">Tool Use</span>
+                    <span className="project-tag">Anthropic API</span>
                   </div>
-                  <span className="project-status status-progress">In Progress</span>
+                  <span className="project-status status-live">Live</span>
                 </div>
-                <h3>Invoice Classifier</h3>
+                <h3>Reconciliation Copilot</h3>
                 <p>
-                  Automated invoice categorization and routing using LLMs -
-                  turning hours of manual document processing into seconds.
+                  Diffs a custodian feed against an internal book of record,
+                  finds the breaks deterministically, and uses Claude to
+                  explain each one in plain English with auditable citations.
                 </p>
                 <div className="project-progress">
                   <div className="project-progress-meta">
                     <span className="project-progress-label">Progress</span>
-                    <span className="project-progress-value">20%</span>
+                    <span className="project-progress-value">100%</span>
                   </div>
                   <div className="project-progress-bar">
-                    <div className="project-progress-fill" style={{ width: "20%" }} />
+                    <div className="project-progress-fill" style={{ width: "100%" }} />
                   </div>
                   <div className="project-progress-footer">
-                    <span className="project-target">Target: May 2026</span>
-                    <span className="project-repo">Repo: private</span>
+                    <span className="project-target">Shipped · May 2026</span>
+                    <a
+                      className="project-try-link"
+                      href="/projects/recon-copilot"
+                      aria-label="Try the reconciliation demo"
+                    >
+                      Try it <span aria-hidden="true">→</span>
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="project-preview project-preview-2">
-                <div className="invoice-preview">
-                  <div className="invoice-preview-header">
-                    <span className="invoice-filename">INV-2024-0891.pdf</span>
-                    <span className="invoice-badge-classified">✓ Classified</span>
+                <div className="recon-card-preview">
+                  <div className="recon-card-preview-header">
+                    <span className="recon-card-preview-title">Breaks identified</span>
+                    <span className="recon-card-preview-count">4 · trade date 04/15</span>
                   </div>
-                  <div className="invoice-card">
-                    <div className="invoice-row">
-                      <span className="invoice-label">Vendor</span>
-                      <span className="invoice-value">Nexoris S.A.</span>
-                    </div>
-                    <div className="invoice-row">
-                      <span className="invoice-label">Status</span>
-                      <span className="invoice-status">✓ Auto-approved</span>
-                    </div>
+                  <div className="recon-card-preview-row">
+                    <span className="recon-card-preview-symbol">NVDA</span>
+                    <span className="recon-card-preview-tag recon-preview-tag-price">Price</span>
+                  </div>
+                  <div className="recon-card-preview-row">
+                    <span className="recon-card-preview-symbol">MSFT</span>
+                    <span className="recon-card-preview-tag recon-preview-tag-qty">Quantity</span>
+                  </div>
+                  <div className="recon-card-preview-row">
+                    <span className="recon-card-preview-symbol">TSLA</span>
+                    <span className="recon-card-preview-tag recon-preview-tag-missing">Missing</span>
                   </div>
                 </div>
               </div>

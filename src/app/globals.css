@@ -2911,3 +2911,740 @@ footer {
     opacity: 0.6;
   }
 }
+
+/* ========== RECONCILIATION COPILOT (/projects/recon-copilot) ========== */
+
+.recon-demo {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recon-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.recon-table {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.recon-table-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    rgba(79, 110, 247, 0.05) 0%,
+    transparent 100%
+  );
+}
+
+.recon-table-custodian .recon-table-head {
+  background: linear-gradient(
+    180deg,
+    rgba(123, 147, 250, 0.06) 0%,
+    transparent 100%
+  );
+}
+.recon-table-ibor .recon-table-head {
+  background: linear-gradient(
+    180deg,
+    rgba(246, 153, 43, 0.06) 0%,
+    transparent 100%
+  );
+}
+
+.recon-table-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  color: var(--text-primary);
+}
+
+.recon-table-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.recon-table-rowcount {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.recon-table-scroll {
+  overflow-x: auto;
+}
+
+.recon-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.recon-table thead th {
+  text-align: left;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.recon-table .recon-th-num,
+.recon-table .recon-td-num {
+  text-align: right;
+}
+
+.recon-table tbody td {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+  color: var(--text-secondary);
+}
+
+.recon-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.recon-table tbody tr.recon-row-break td {
+  background: rgba(246, 153, 43, 0.06);
+  color: var(--text-primary);
+}
+
+.recon-td-symbol-main {
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.005em;
+}
+
+.recon-td-symbol-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  margin-top: 0.1rem;
+}
+
+.recon-side {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.45rem;
+  border-radius: 4px;
+}
+.recon-side-buy {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+.recon-side-sell {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.recon-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.recon-controls-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.recon-trade-date {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.recon-controls-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.recon-controls-stats svg {
+  color: #4ade80;
+}
+
+.recon-controls-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.recon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-out),
+              background 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              opacity 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.recon-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.recon-btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.recon-btn-primary:hover:not(:disabled) {
+  background: #6a85ff;
+  transform: translateY(-1px);
+}
+
+.recon-btn-primary:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.recon-btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+
+.recon-btn-secondary:hover:not(:disabled) {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.recon-btn-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: recon-spin 0.7s linear infinite;
+}
+
+@keyframes recon-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.recon-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.recon-banner-error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.recon-banner-warn {
+  background: rgba(246, 153, 43, 0.08);
+  border: 1px solid rgba(246, 153, 43, 0.25);
+  color: #fbb454;
+}
+
+.recon-result {
+  margin-top: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.recon-result-head {
+  padding: 1rem 1.1rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.recon-result-title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+.recon-result-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+  line-height: 1.55;
+  max-width: 720px;
+}
+
+.recon-result-empty {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.1rem 1.2rem;
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 12px;
+  color: var(--text-primary);
+}
+
+.recon-result-empty svg {
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+.recon-result-empty-title {
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+
+.recon-result-empty-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.1rem;
+}
+
+.recon-break-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recon-break {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s ease;
+}
+
+.recon-break:last-child {
+  border-bottom: none;
+}
+
+.recon-break.open,
+.recon-break:hover {
+  background: rgba(79, 110, 247, 0.03);
+}
+
+.recon-break-head {
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.recon-break-head:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+.recon-break-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 110, 247, 0.12);
+  color: #7B93FA;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.recon-break-headline {
+  min-width: 0;
+}
+
+.recon-break-trade {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.01em;
+}
+
+.recon-break-rationale {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.recon-break-norationale {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.recon-break-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.recon-break-meta svg:last-child {
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.recon-break.open .recon-break-meta svg:last-child {
+  color: var(--text-secondary);
+}
+
+.recon-cat-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.recon-cat-price_break {
+  background: rgba(246, 153, 43, 0.1);
+  color: #fbb454;
+  border-color: rgba(246, 153, 43, 0.25);
+}
+.recon-cat-quantity_break {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c4b5fd;
+  border-color: rgba(168, 85, 247, 0.25);
+}
+.recon-cat-settle_date_drift {
+  background: rgba(56, 189, 248, 0.1);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+.recon-cat-missing_in_custodian,
+.recon-cat-missing_in_ibor {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.recon-sev {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.recon-sev-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.recon-sev-high {
+  color: #f87171;
+}
+.recon-sev-medium {
+  color: #fbb454;
+}
+.recon-sev-low {
+  color: #94a3b8;
+}
+
+.recon-break-body {
+  padding: 0 1.1rem 1.1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.recon-break-action {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.recon-break-action-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.recon-break-action-text {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+.recon-break-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.recon-source-row {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+}
+
+.recon-source-empty {
+  border-style: dashed;
+}
+
+.recon-source-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.recon-source-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.recon-source-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.recon-source-field dt {
+  color: var(--text-muted);
+}
+
+.recon-source-field dd {
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.recon-source-field-flagged {
+  background: rgba(246, 153, 43, 0.08);
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  margin: -0.15rem -0.35rem;
+}
+
+.recon-source-field-flagged dd {
+  color: #fbb454;
+}
+
+.recon-source-missing {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Roadmap section on the recon page */
+.recon-roadmap {
+  margin-top: 3.5rem;
+}
+
+.recon-roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+.recon-roadmap-list li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.recon-roadmap-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.recon-roadmap-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Mobile reflow: stack tables, stack source rows */
+@media (max-width: 760px) {
+  .recon-data-grid {
+    grid-template-columns: 1fr;
+  }
+  .recon-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .recon-controls-buttons {
+    justify-content: flex-end;
+  }
+  .recon-break-body {
+    padding-left: 1.1rem;
+  }
+  .recon-break-rows {
+    grid-template-columns: 1fr;
+  }
+  .recon-roadmap-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .recon-break-head {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+  .recon-break-meta {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+  }
+}
+
+/* ========== HOMEPAGE PROJECT CARD PREVIEW (recon) ========== */
+
+.recon-card-preview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.recon-card-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  margin-bottom: 0.15rem;
+}
+
+.recon-card-preview-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.005em;
+}
+
+.recon-card-preview-count {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.recon-card-preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.recon-card-preview-symbol {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.01em;
+}
+
+.recon-card-preview-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+}
+
+.recon-preview-tag-price {
+  background: rgba(246, 153, 43, 0.12);
+  color: #fbb454;
+}
+.recon-preview-tag-qty {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c4b5fd;
+}
+.recon-preview-tag-missing {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
