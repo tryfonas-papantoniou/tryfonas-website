@@ -1249,6 +1249,32 @@ section {
   opacity: 0.75;
 }
 
+/* "Coming soon" indicator for cards in the planned tier - lives in
+   the same footer slot as "Try it" or the repo note, but visually
+   reads as a status, not an action. */
+.project-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.project-coming-soon::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  opacity: 0.75;
+}
+
 /* "Try it" link used in place of the repo note when the project
    is live and shippable. Same footer slot, accent colour, subtle
    translate on hover. */

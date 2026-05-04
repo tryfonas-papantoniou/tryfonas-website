@@ -89,7 +89,7 @@ export default function ReconDemo() {
       <div className="recon-data-grid">
         <DataTable
           title="Custodian feed"
-          subtitle="End-of-day position file from BNY-style custodian"
+          subtitle="End-of-day position file from third-party custodian"
           rows={CUSTODIAN_FEED}
           rowsLabel={`${CUSTODIAN_FEED.length} rows`}
           accent="custodian"
@@ -267,8 +267,9 @@ function ResultPanel({ breaks, matches, expanded, onToggle }) {
       <div className="recon-result-head">
         <div className="recon-result-title">Breaks identified</div>
         <div className="recon-result-sub">
-          Each break is matched by symbol and trade date, then field-level diffed.
-          Claude explains the likely cause and a next step.
+          Each break is matched on symbol and trade date, then compared
+          field by field. Claude explains the likely cause and provides
+          a suggested next step.
         </div>
       </div>
       <ul className="recon-break-list">
@@ -306,7 +307,7 @@ function BreakCard({ breakRow, open, onToggle }) {
           <div className="recon-break-rationale">
             {breakRow.rationale || (
               <span className="recon-break-norationale">
-                Diff identified - explanation unavailable.
+                Break identified - explanation unavailable.
               </span>
             )}
           </div>

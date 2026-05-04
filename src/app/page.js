@@ -385,9 +385,9 @@ export default function Home() {
                 </div>
                 <h3>Reconciliation Copilot</h3>
                 <p>
-                  Diffs a custodian feed against an internal book of record,
-                  finds the breaks deterministically, and uses Claude to
-                  explain each one in plain English with auditable citations.
+                  Reconciles a custodian feed against an internal book of
+                  record. Rule-based code identifies the breaks; Claude
+                  explains each one in plain English with auditable citations.
                 </p>
                 <div className="project-progress">
                   <div className="project-progress-meta">
@@ -458,7 +458,7 @@ export default function Home() {
                   </div>
                   <div className="project-progress-footer">
                     <span className="project-target">Target: May 2026</span>
-                    <span className="project-repo">Repo: private</span>
+                    <span className="project-coming-soon">Coming soon</span>
                   </div>
                 </div>
               </div>
