@@ -254,19 +254,19 @@ export default function Home() {
       {/* PROJECTS */}
       <section id="projects">
         <ScrollReveal>
-          <span className="section-label">Projects &amp; Roadmap</span>
-          <h2 className="section-title">What I&apos;ve Built &amp; What&apos;s Next</h2>
+          <span className="section-label">Projects</span>
+          <h2 className="section-title">What I&apos;ve Built</h2>
           <p className="section-subtitle">
-            One live project - this site itself - and three AI tools in active
-            development, each demonstrating a different aspect of modern AI
-            engineering: retrieval-augmented generation, document intelligence,
-            and agentic workflows.
+            This site itself plus three live AI tools, each demonstrating a
+            different aspect of modern AI engineering: retrieval-augmented
+            generation, schema-validated tool use, and agentic
+            orchestration over analytical functions.
           </p>
           <div className="projects-intro">
-            The three tools below are inspired by real inefficiencies I
-            encountered during my 6+ years in enterprise Finance and Operations -
-            manual processes, slow decisions, and inconsistent data handling
-            that are exactly the kind of problems AI can solve.
+            Each tool below is inspired by a real inefficiency I encountered
+            during my 6+ years in enterprise Finance and Operations - manual
+            processes, slow decisions, and inconsistent data handling that
+            are exactly the kind of problems AI is well suited to solve.
           </div>
         </ScrollReveal>
         <ScrollReveal stagger>
@@ -437,28 +437,35 @@ export default function Home() {
                 <div className="project-info-top">
                   <div className="project-tags">
                     <span className="project-tag">Agentic AI</span>
-                    <span className="project-tag">Data Analysis</span>
-                    <span className="project-tag">NLP</span>
+                    <span className="project-tag">Tool Use</span>
+                    <span className="project-tag">Anthropic API</span>
                   </div>
-                  <span className="project-status status-planned">Planned</span>
+                  <span className="project-status status-live">Live</span>
                 </div>
                 <h3>AR Insights Dashboard</h3>
                 <p>
-                  AI-powered accounts receivable analytics - ask questions about
-                  financial data in plain English and get intelligent
-                  visualizations.
+                  Ask plain-English questions about a synthetic accounts
+                  receivable portfolio. Claude orchestrates a sequence of
+                  vetted analytical functions and answers with cited data
+                  and inline charts.
                 </p>
                 <div className="project-progress">
                   <div className="project-progress-meta">
                     <span className="project-progress-label">Progress</span>
-                    <span className="project-progress-value">10%</span>
+                    <span className="project-progress-value">100%</span>
                   </div>
                   <div className="project-progress-bar">
-                    <div className="project-progress-fill" style={{ width: "10%" }} />
+                    <div className="project-progress-fill" style={{ width: "100%" }} />
                   </div>
                   <div className="project-progress-footer">
-                    <span className="project-target">Target: May 2026</span>
-                    <span className="project-coming-soon">Coming soon</span>
+                    <span className="project-target">Shipped · May 2026</span>
+                    <a
+                      className="project-try-link"
+                      href="/projects/ar-insights"
+                      aria-label="Try the AR Insights demo"
+                    >
+                      Try it <span aria-hidden="true">→</span>
+                    </a>
                   </div>
                 </div>
               </div>
