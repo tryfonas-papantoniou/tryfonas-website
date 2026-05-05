@@ -1278,25 +1278,90 @@ section {
 /* "Try it" link used in place of the repo note when the project
    is live and shippable. Same footer slot, accent colour, subtle
    translate on hover. */
+/* "Try it" CTA on live project cards. Pill-shaped button with a
+   permanent rotating conic-gradient border (same animation as
+   .glow-border, but always visible instead of hover-only). The
+   element is z-index: 0 with two layered pseudos: ::before holds
+   the rotating gradient just outside the pill, ::after sits on top
+   of it as the inner fill so only a thin rotating ring shows. */
 .project-try-link {
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  color: var(--accent);
+  gap: 0.4rem;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.84rem;
   font-weight: 600;
+  letter-spacing: 0.005em;
+  color: #ffffff;
   text-decoration: none;
+  border-radius: 999px;
   transition: transform 0.2s var(--ease-spring), color 0.2s ease;
+  isolation: isolate;
+}
+
+.project-try-link::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 55%,
+    #3a52d4 70%,
+    #4F6EF7 76%,
+    #7B93FA 82%,
+    #F6992B 89%,
+    #3a52d4 95%,
+    transparent 100%
+  );
+  z-index: -2;
+  animation: spin-border 4s linear infinite;
+  opacity: 1;
+}
+
+.project-try-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #6a85ff 100%
+  );
+  z-index: -1;
+  box-shadow:
+    0 4px 16px rgba(79, 110, 247, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .project-try-link:hover {
-  color: #7B93FA;
-  transform: translateX(2px);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.project-try-link:hover::after {
+  background: linear-gradient(
+    135deg,
+    #6a85ff 0%,
+    #8aa1ff 100%
+  );
+  box-shadow:
+    0 6px 20px rgba(79, 110, 247, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .project-try-link:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #ffffff;
   outline-offset: 3px;
-  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-try-link::before {
+    animation: none;
+  }
 }
 
 /* ── Live CTA link inside project card ── */
